@@ -1,0 +1,574 @@
+
+
+// =============================================
+// GERMAN SEEKHO — A1 Complete Content
+// =============================================
+
+// Word Model
+class GermanWord {
+  final String german;
+  final String english;
+  final String urdu;
+  final String article;
+  final String gender;
+  final String emoji;
+
+  const GermanWord({
+    required this.german,
+    required this.english,
+    required this.urdu,
+    this.article = '',
+    this.gender = '',
+    this.emoji = '📖',
+  });
+}
+
+// Sentence Word Model (word by word)
+class SentenceWord {
+  final String de;
+  final String en;
+  final String ur;
+
+  const SentenceWord({
+    required this.de,
+    required this.en,
+    required this.ur,
+  });
+}
+
+// Sentence Model
+class GermanSentence {
+  final List<SentenceWord> words;
+  final String grammarNote;
+  final String emoji;
+
+  const GermanSentence({
+    required this.words,
+    this.grammarNote = '',
+    this.emoji = '💬',
+  });
+
+  String get germanFull => words.map((w) => w.de).join(' ');
+  String get englishFull => words.map((w) => w.en).join(' ');
+  String get urduFull => words.map((w) => w.ur).join(' ');
+}
+
+// Topic Model
+class A1Topic {
+  final String title;
+  final String urduTitle;
+  final String emoji;
+  final List<GermanWord> words;
+  final List<GermanSentence> sentences;
+
+  const A1Topic({
+    required this.title,
+    required this.urduTitle,
+    required this.emoji,
+    required this.words,
+    required this.sentences,
+  });
+}
+
+// =============================================
+// A1 CONTENT
+// =============================================
+
+const List<A1Topic> a1Topics = [
+
+  // =============================================
+  // TOPIC 1 — INTRODUCE YOURSELF
+  // =============================================
+  A1Topic(
+    title: 'Introduce Yourself',
+    urduTitle: 'اپنا تعارف کروائیں',
+    emoji: '👋',
+    words: [
+      GermanWord(german: 'der Name', english: 'the Name', urdu: 'نام', article: 'der', gender: 'masculine — مذکر', emoji: '👤'),
+      GermanWord(german: 'das Alter', english: 'the Age', urdu: 'عمر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎂'),
+      GermanWord(german: 'das Land', english: 'the Country', urdu: 'ملک', article: 'das', gender: 'neutral — غیرجنس', emoji: '🌍'),
+      GermanWord(german: 'die Stadt', english: 'the City', urdu: 'شہر', article: 'die', gender: 'feminine — مؤنث', emoji: '🏙️'),
+      GermanWord(german: 'die Sprache', english: 'the Language', urdu: 'زبان', article: 'die', gender: 'feminine — مؤنث', emoji: '🗣️'),
+      GermanWord(german: 'der Beruf', english: 'the Occupation', urdu: 'پیشہ', article: 'der', gender: 'masculine — مذکر', emoji: '💼'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '👋',
+        grammarNote: '"heiße" verb "heißen" se aata hai — Ich ke saath heiße use hota hai',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'heiße', en: 'am called', ur: 'کہلاتا ہوں'),
+          SentenceWord(de: 'Hamza.', en: 'Hamza.', ur: 'حمزہ۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🌍',
+        grammarNote: '"komme aus" = come from — aus preposition hai jo country ke saath use hota hai',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'komme', en: 'come', ur: 'آتا ہوں'),
+          SentenceWord(de: 'aus', en: 'from', ur: 'سے'),
+          SentenceWord(de: 'Pakistan.', en: 'Pakistan.', ur: 'پاکستان۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🎂',
+        grammarNote: '"bin" verb "sein" se aata hai — Ich bin = I am = میں ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: '25', en: '25', ur: '25'),
+          SentenceWord(de: 'Jahre', en: 'years', ur: 'سال'),
+          SentenceWord(de: 'alt.', en: 'old.', ur: 'کا۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💼',
+        grammarNote: '"bin" + Beruf — pیشہ batane ke liye koi article nahi lagta!',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: 'Entwickler.', en: 'Developer.', ur: 'ڈویلپر۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🗣️',
+        grammarNote: '"spreche" verb "sprechen" se — Ich spreche = I speak = میں بولتا ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'spreche', en: 'speak', ur: 'بولتا ہوں'),
+          SentenceWord(de: 'Urdu', en: 'Urdu', ur: 'اردو'),
+          SentenceWord(de: 'und', en: 'and', ur: 'اور'),
+          SentenceWord(de: 'Englisch.', en: 'English.', ur: 'انگریزی۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 2 — ALPHABET & NUMBERS
+  // =============================================
+  A1Topic(
+    title: 'Numbers',
+    urduTitle: 'گنتی',
+    emoji: '🔢',
+    words: [
+      GermanWord(german: 'null', english: 'zero', urdu: 'صفر', emoji: '0️⃣'),
+      GermanWord(german: 'eins', english: 'one', urdu: 'ایک', emoji: '1️⃣'),
+      GermanWord(german: 'zwei', english: 'two', urdu: 'دو', emoji: '2️⃣'),
+      GermanWord(german: 'drei', english: 'three', urdu: 'تین', emoji: '3️⃣'),
+      GermanWord(german: 'vier', english: 'four', urdu: 'چار', emoji: '4️⃣'),
+      GermanWord(german: 'fünf', english: 'five', urdu: 'پانچ', emoji: '5️⃣'),
+      GermanWord(german: 'sechs', english: 'six', urdu: 'چھ', emoji: '6️⃣'),
+      GermanWord(german: 'sieben', english: 'seven', urdu: 'سات', emoji: '7️⃣'),
+      GermanWord(german: 'acht', english: 'eight', urdu: 'آٹھ', emoji: '8️⃣'),
+      GermanWord(german: 'neun', english: 'nine', urdu: 'نو', emoji: '9️⃣'),
+      GermanWord(german: 'zehn', english: 'ten', urdu: 'دس', emoji: '🔟'),
+      GermanWord(german: 'zwanzig', english: 'twenty', urdu: 'بیس', emoji: '2️⃣0️⃣'),
+      GermanWord(german: 'dreißig', english: 'thirty', urdu: 'تیس', emoji: '3️⃣0️⃣'),
+      GermanWord(german: 'hundert', english: 'hundred', urdu: 'سو', emoji: '💯'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '📞',
+        grammarNote: '"ist" = is = ہے — meine = my = میری',
+        words: [
+          SentenceWord(de: 'Meine', en: 'My', ur: 'میری'),
+          SentenceWord(de: 'Nummer', en: 'number', ur: 'نمبر'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: '0123456789.', en: '0123456789.', ur: '0123456789۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🎂',
+        grammarNote: '"bin" = am — Jahre alt = years old',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: 'zwanzig', en: 'twenty', ur: 'بیس'),
+          SentenceWord(de: 'Jahre', en: 'years', ur: 'سال'),
+          SentenceWord(de: 'alt.', en: 'old.', ur: 'کا۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 3 — ARTICLES der/die/das
+  // =============================================
+  A1Topic(
+    title: 'Articles — der/die/das',
+    urduTitle: 'اسم کی جنس — der/die/das',
+    emoji: '📖',
+    words: [
+      GermanWord(german: 'der Mann', english: 'the Man', urdu: 'مرد', article: 'der', gender: 'masculine — مذکر', emoji: '👨'),
+      GermanWord(german: 'der Vater', english: 'the Father', urdu: 'باپ', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍👧'),
+      GermanWord(german: 'der Bruder', english: 'the Brother', urdu: 'بھائی', article: 'der', gender: 'masculine — مذکر', emoji: '👦'),
+      GermanWord(german: 'der Sohn', english: 'the Son', urdu: 'بیٹا', article: 'der', gender: 'masculine — مذکر', emoji: '👦'),
+      GermanWord(german: 'die Frau', english: 'the Woman', urdu: 'عورت', article: 'die', gender: 'feminine — مؤنث', emoji: '👩'),
+      GermanWord(german: 'die Mutter', english: 'the Mother', urdu: 'ماں', article: 'die', gender: 'feminine — مؤنث', emoji: '👩‍👧'),
+      GermanWord(german: 'die Schwester', english: 'the Sister', urdu: 'بہن', article: 'die', gender: 'feminine — مؤنث', emoji: '👧'),
+      GermanWord(german: 'die Tochter', english: 'the Daughter', urdu: 'بیٹی', article: 'die', gender: 'feminine — مؤنث', emoji: '👧'),
+      GermanWord(german: 'das Kind', english: 'the Child', urdu: 'بچہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🧒'),
+      GermanWord(german: 'das Baby', english: 'the Baby', urdu: 'بچہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '👶'),
+      GermanWord(german: 'das Buch', english: 'the Book', urdu: 'کتاب', article: 'das', gender: 'neutral — غیرجنس', emoji: '📚'),
+      GermanWord(german: 'das Auto', english: 'the Car', urdu: 'گاڑی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🚗'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '👨',
+        grammarNote: '"Das ist" = This is = یہ ہے — har noun ke liye article yaad karo!',
+        words: [
+          SentenceWord(de: 'Das', en: 'This', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Mann.', en: 'man.', ur: 'مرد۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '👩',
+        grammarNote: 'die = feminine article — Frau, Mutter, Schwester sab die hain',
+        words: [
+          SentenceWord(de: 'Das', en: 'This', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'die', en: 'the', ur: ''),
+          SentenceWord(de: 'Frau.', en: 'woman.', ur: 'عورت۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🧒',
+        grammarNote: 'das = neutral article — Kind, Baby, Buch sab das hain',
+        words: [
+          SentenceWord(de: 'Das', en: 'This', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'das', en: 'the', ur: ''),
+          SentenceWord(de: 'Kind.', en: 'child.', ur: 'بچہ۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 4 — DAYS & MONTHS
+  // =============================================
+  A1Topic(
+    title: 'Days & Months',
+    urduTitle: 'دن اور مہینے',
+    emoji: '📅',
+    words: [
+      GermanWord(german: 'der Montag', english: 'Monday', urdu: 'پیر', article: 'der', gender: 'masculine — مذکر', emoji: '1️⃣'),
+      GermanWord(german: 'der Dienstag', english: 'Tuesday', urdu: 'منگل', article: 'der', gender: 'masculine — مذکر', emoji: '2️⃣'),
+      GermanWord(german: 'der Mittwoch', english: 'Wednesday', urdu: 'بدھ', article: 'der', gender: 'masculine — مذکر', emoji: '3️⃣'),
+      GermanWord(german: 'der Donnerstag', english: 'Thursday', urdu: 'جمعرات', article: 'der', gender: 'masculine — مذکر', emoji: '4️⃣'),
+      GermanWord(german: 'der Freitag', english: 'Friday', urdu: 'جمعہ', article: 'der', gender: 'masculine — مذکر', emoji: '5️⃣'),
+      GermanWord(german: 'der Samstag', english: 'Saturday', urdu: 'ہفتہ', article: 'der', gender: 'masculine — مذکر', emoji: '6️⃣'),
+      GermanWord(german: 'der Sonntag', english: 'Sunday', urdu: 'اتوار', article: 'der', gender: 'masculine — مذکر', emoji: '7️⃣'),
+      GermanWord(german: 'der Januar', english: 'January', urdu: 'جنوری', article: 'der', gender: 'masculine — مذکر', emoji: '❄️'),
+      GermanWord(german: 'der Februar', english: 'February', urdu: 'فروری', article: 'der', gender: 'masculine — مذکر', emoji: '💝'),
+      GermanWord(german: 'der März', english: 'March', urdu: 'مارچ', article: 'der', gender: 'masculine — مذکر', emoji: '🌱'),
+      GermanWord(german: 'der April', english: 'April', urdu: 'اپریل', article: 'der', gender: 'masculine — مذکر', emoji: '🌸'),
+      GermanWord(german: 'der Mai', english: 'May', urdu: 'مئی', article: 'der', gender: 'masculine — مذکر', emoji: '🌺'),
+      GermanWord(german: 'der Juni', english: 'June', urdu: 'جون', article: 'der', gender: 'masculine — مذکر', emoji: '☀️'),
+      GermanWord(german: 'der Juli', english: 'July', urdu: 'جولائی', article: 'der', gender: 'masculine — مذکر', emoji: '🏖️'),
+      GermanWord(german: 'der August', english: 'August', urdu: 'اگست', article: 'der', gender: 'masculine — مذکر', emoji: '🌻'),
+      GermanWord(german: 'der September', english: 'September', urdu: 'ستمبر', article: 'der', gender: 'masculine — مذکر', emoji: '🍂'),
+      GermanWord(german: 'der Oktober', english: 'October', urdu: 'اکتوبر', article: 'der', gender: 'masculine — مذکر', emoji: '🎃'),
+      GermanWord(german: 'der November', english: 'November', urdu: 'نومبر', article: 'der', gender: 'masculine — مذکر', emoji: '🌧️'),
+      GermanWord(german: 'der Dezember', english: 'December', urdu: 'دسمبر', article: 'der', gender: 'masculine — مذکر', emoji: '🎄'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '📅',
+        grammarNote: '"Heute ist" = Today is = آج ہے — din batane ke liye',
+        words: [
+          SentenceWord(de: 'Heute', en: 'Today', ur: 'آج'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'Montag.', en: 'Monday.', ur: 'پیر۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🗓️',
+        grammarNote: '"im" = in the — mahine ke saath "im" use hota hai',
+        words: [
+          SentenceWord(de: 'Wir', en: 'We', ur: 'ہم'),
+          SentenceWord(de: 'sind', en: 'are', ur: 'ہیں'),
+          SentenceWord(de: 'im', en: 'in', ur: 'میں'),
+          SentenceWord(de: 'Januar.', en: 'January.', ur: 'جنوری۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 5 — TIME
+  // =============================================
+  A1Topic(
+    title: 'Time — Uhrzeit',
+    urduTitle: 'وقت',
+    emoji: '🕐',
+    words: [
+      GermanWord(german: 'die Uhr', english: 'the Clock/Hour', urdu: 'گھڑی/بجے', article: 'die', gender: 'feminine — مؤنث', emoji: '🕐'),
+      GermanWord(german: 'die Minute', english: 'the Minute', urdu: 'منٹ', article: 'die', gender: 'feminine — مؤنث', emoji: '⏱️'),
+      GermanWord(german: 'die Stunde', english: 'the Hour', urdu: 'گھنٹہ', article: 'die', gender: 'feminine — مؤنث', emoji: '⏰'),
+      GermanWord(german: 'der Morgen', english: 'the Morning', urdu: 'صبح', article: 'der', gender: 'masculine — مذکر', emoji: '🌅'),
+      GermanWord(german: 'der Mittag', english: 'the Noon', urdu: 'دوپہر', article: 'der', gender: 'masculine — مذکر', emoji: '☀️'),
+      GermanWord(german: 'der Abend', english: 'the Evening', urdu: 'شام', article: 'der', gender: 'masculine — مذکر', emoji: '🌆'),
+      GermanWord(german: 'die Nacht', english: 'the Night', urdu: 'رات', article: 'die', gender: 'feminine — مؤنث', emoji: '🌙'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '🕐',
+        grammarNote: '"Es ist" = It is = یہ ہے — waqt batane ke liye hamesha "Es ist" use hota hai',
+        words: [
+          SentenceWord(de: 'Es', en: 'It', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'drei', en: 'three', ur: 'تین'),
+          SentenceWord(de: 'Uhr.', en: "o'clock.", ur: 'بجے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '⏰',
+        grammarNote: '"Viertel nach" = quarter past = سوا — "halb" = half = آدھا',
+        words: [
+          SentenceWord(de: 'Es', en: 'It', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'Viertel', en: 'quarter', ur: 'پاؤ'),
+          SentenceWord(de: 'nach', en: 'past', ur: 'بعد'),
+          SentenceWord(de: 'vier.', en: 'four.', ur: 'چار کے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🌅',
+        grammarNote: '"am Morgen" = in the morning = صبح کو — am = an + dem',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'stehe', en: 'get up', ur: 'اٹھتا ہوں'),
+          SentenceWord(de: 'am', en: 'in the', ur: ''),
+          SentenceWord(de: 'Morgen', en: 'morning', ur: 'صبح'),
+          SentenceWord(de: 'auf.', en: 'up.', ur: 'کو۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 6 — FOOD & DRINKS
+  // =============================================
+  A1Topic(
+    title: 'Food & Drinks',
+    urduTitle: 'کھانا اور پینا',
+    emoji: '🍽️',
+    words: [
+      GermanWord(german: 'das Brot', english: 'the Bread', urdu: 'روٹی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🍞'),
+      GermanWord(german: 'der Reis', english: 'the Rice', urdu: 'چاول', article: 'der', gender: 'masculine — مذکر', emoji: '🍚'),
+      GermanWord(german: 'das Fleisch', english: 'the Meat', urdu: 'گوشت', article: 'das', gender: 'neutral — غیرجنس', emoji: '🥩'),
+      GermanWord(german: 'der Apfel', english: 'the Apple', urdu: 'سیب', article: 'der', gender: 'masculine — مذکر', emoji: '🍎'),
+      GermanWord(german: 'die Banane', english: 'the Banana', urdu: 'کیلا', article: 'die', gender: 'feminine — مؤنث', emoji: '🍌'),
+      GermanWord(german: 'das Wasser', english: 'the Water', urdu: 'پانی', article: 'das', gender: 'neutral — غیرجنس', emoji: '💧'),
+      GermanWord(german: 'der Tee', english: 'the Tea', urdu: 'چائے', article: 'der', gender: 'masculine — مذکر', emoji: '🍵'),
+      GermanWord(german: 'der Kaffee', english: 'the Coffee', urdu: 'کافی', article: 'der', gender: 'masculine — مذکر', emoji: '☕'),
+      GermanWord(german: 'die Milch', english: 'the Milk', urdu: 'دودھ', article: 'die', gender: 'feminine — مؤنث', emoji: '🥛'),
+      GermanWord(german: 'das Ei', english: 'the Egg', urdu: 'انڈہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🥚'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '🍽️',
+        grammarNote: '"möchte" = would like = چاہتا ہوں — polite request ke liye',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'چاہتا ہوں'),
+          SentenceWord(de: 'einen', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'Tee,', en: 'tea,', ur: 'چائے،'),
+          SentenceWord(de: 'bitte.', en: 'please.', ur: 'براہ کرم۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🍎',
+        grammarNote: '"esse" = eat = کھاتا ہوں — Akkusativ mein der → einen',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'esse', en: 'eat', ur: 'کھاتا ہوں'),
+          SentenceWord(de: 'einen', en: 'an', ur: 'ایک'),
+          SentenceWord(de: 'Apfel.', en: 'apple.', ur: 'سیب۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💧',
+        grammarNote: '"trinke" = drink = پیتا ہوں — Wasser das hai tو ein use hoga',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'trinke', en: 'drink', ur: 'پیتا ہوں'),
+          SentenceWord(de: 'Wasser.', en: 'water.', ur: 'پانی۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 7 — HOBBIES & FREE TIME
+  // =============================================
+  A1Topic(
+    title: 'Hobbies & Free Time',
+    urduTitle: 'مشاغل اور فارغ وقت',
+    emoji: '🎮',
+    words: [
+      GermanWord(german: 'das Hobby', english: 'the Hobby', urdu: 'مشغلہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎯'),
+      GermanWord(german: 'der Sport', english: 'the Sport', urdu: 'کھیل', article: 'der', gender: 'masculine — مذکر', emoji: '⚽'),
+      GermanWord(german: 'die Musik', english: 'the Music', urdu: 'موسیقی', article: 'die', gender: 'feminine — مؤنث', emoji: '🎵'),
+      GermanWord(german: 'das Lesen', english: 'the Reading', urdu: 'پڑھنا', article: 'das', gender: 'neutral — غیرجنس', emoji: '📚'),
+      GermanWord(german: 'das Reisen', english: 'the Traveling', urdu: 'سفر', article: 'das', gender: 'neutral — غیرجنس', emoji: '✈️'),
+      GermanWord(german: 'das Kochen', english: 'the Cooking', urdu: 'کھانا پکانا', article: 'das', gender: 'neutral — غیرجنس', emoji: '👨‍🍳'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '🎯',
+        grammarNote: '"Mein Hobby ist" = My hobby is = میرا مشغلہ ہے',
+        words: [
+          SentenceWord(de: 'Mein', en: 'My', ur: 'میرا'),
+          SentenceWord(de: 'Hobby', en: 'hobby', ur: 'مشغلہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'Lesen.', en: 'reading.', ur: 'پڑھنا۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '⚽',
+        grammarNote: '"spiele" = play = کھیلتا ہوں — Sport masculine hai',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'spiele', en: 'play', ur: 'کھیلتا ہوں'),
+          SentenceWord(de: 'gerne', en: 'gladly', ur: 'خوشی سے'),
+          SentenceWord(de: 'Fußball.', en: 'football.', ur: 'فٹبال۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 8 — AT THE HOTEL
+  // =============================================
+  A1Topic(
+    title: 'At the Hotel',
+    urduTitle: 'ہوٹل میں',
+    emoji: '🏨',
+    words: [
+      GermanWord(german: 'das Hotel', english: 'the Hotel', urdu: 'ہوٹل', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏨'),
+      GermanWord(german: 'das Zimmer', english: 'the Room', urdu: 'کمرہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🛏️'),
+      GermanWord(german: 'die Rezeption', english: 'the Reception', urdu: 'استقبالیہ', article: 'die', gender: 'feminine — مؤنث', emoji: '🛎️'),
+      GermanWord(german: 'der Schlüssel', english: 'the Key', urdu: 'چابی', article: 'der', gender: 'masculine — مذکر', emoji: '🔑'),
+      GermanWord(german: 'die Nacht', english: 'the Night', urdu: 'رات', article: 'die', gender: 'feminine — مؤنث', emoji: '🌙'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '🏨',
+        grammarNote: '"Ich möchte" = I would like = میں چاہتا ہوں — polite request',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'چاہتا ہوں'),
+          SentenceWord(de: 'ein', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'Zimmer', en: 'room', ur: 'کمرہ'),
+          SentenceWord(de: 'buchen.', en: 'book.', ur: 'بک کرنا۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💰',
+        grammarNote: '"Was kostet" = How much does it cost = کتنے کا ہے',
+        words: [
+          SentenceWord(de: 'Was', en: 'What', ur: 'کیا'),
+          SentenceWord(de: 'kostet', en: 'costs', ur: 'کا ہے'),
+          SentenceWord(de: 'das', en: 'the', ur: 'یہ'),
+          SentenceWord(de: 'Zimmer?', en: 'room?', ur: 'کمرہ؟'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 9 — THE CITY
+  // =============================================
+  A1Topic(
+    title: 'The City',
+    urduTitle: 'شہر',
+    emoji: '🏙️',
+    words: [
+      GermanWord(german: 'die Stadt', english: 'the City', urdu: 'شہر', article: 'die', gender: 'feminine — مؤنث', emoji: '🏙️'),
+      GermanWord(german: 'die Straße', english: 'the Street', urdu: 'سڑک', article: 'die', gender: 'feminine — مؤنث', emoji: '🛣️'),
+      GermanWord(german: 'der Bahnhof', english: 'the Train Station', urdu: 'ریلوے اسٹیشن', article: 'der', gender: 'masculine — مذکر', emoji: '🚉'),
+      GermanWord(german: 'die Bank', english: 'the Bank', urdu: 'بینک', article: 'die', gender: 'feminine — مؤنث', emoji: '🏦'),
+      GermanWord(german: 'das Krankenhaus', english: 'the Hospital', urdu: 'ہسپتال', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏥'),
+      GermanWord(german: 'die Apotheke', english: 'the Pharmacy', urdu: 'دوا خانہ', article: 'die', gender: 'feminine — مؤنث', emoji: '💊'),
+      GermanWord(german: 'links', english: 'left', urdu: 'بائیں', emoji: '⬅️'),
+      GermanWord(german: 'rechts', english: 'right', urdu: 'دائیں', emoji: '➡️'),
+      GermanWord(german: 'geradeaus', english: 'straight ahead', urdu: 'سیدھا', emoji: '⬆️'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '🗺️',
+        grammarNote: '"Wo ist" = Where is = کہاں ہے — direction poochne ke liye',
+        words: [
+          SentenceWord(de: 'Wo', en: 'Where', ur: 'کہاں'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Bahnhof?', en: 'train station?', ur: 'ریلوے اسٹیشن؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '➡️',
+        grammarNote: '"Gehen Sie" = Go (formal) = جائیں — formal command',
+        words: [
+          SentenceWord(de: 'Gehen', en: 'Go', ur: 'جائیں'),
+          SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
+          SentenceWord(de: 'geradeaus,', en: 'straight,', ur: 'سیدھا،'),
+          SentenceWord(de: 'dann', en: 'then', ur: 'پھر'),
+          SentenceWord(de: 'links.', en: 'left.', ur: 'بائیں۔'),
+        ],
+      ),
+    ],
+  ),
+
+  // =============================================
+  // TOPIC 10 — HEALTH
+  // =============================================
+  A1Topic(
+    title: 'Health',
+    urduTitle: 'صحت',
+    emoji: '🏥',
+    words: [
+      GermanWord(german: 'der Arzt', english: 'the Doctor', urdu: 'ڈاکٹر', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍⚕️'),
+      GermanWord(german: 'das Krankenhaus', english: 'the Hospital', urdu: 'ہسپتال', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏥'),
+      GermanWord(german: 'der Kopf', english: 'the Head', urdu: 'سر', article: 'der', gender: 'masculine — مذکر', emoji: '🤕'),
+      GermanWord(german: 'der Bauch', english: 'the Stomach', urdu: 'پیٹ', article: 'der', gender: 'masculine — مذکر', emoji: '🤢'),
+      GermanWord(german: 'das Fieber', english: 'the Fever', urdu: 'بخار', article: 'das', gender: 'neutral — غیرجنس', emoji: '🤒'),
+      GermanWord(german: 'die Medizin', english: 'the Medicine', urdu: 'دوا', article: 'die', gender: 'feminine — مؤنث', emoji: '💊'),
+    ],
+    sentences: [
+      GermanSentence(
+        emoji: '🤒',
+        grammarNote: '"Ich bin krank" = I am sick = میں بیمار ہوں — bin = am',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: 'krank.', en: 'sick.', ur: 'بیمار۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🤕',
+        grammarNote: '"Ich habe Kopfschmerzen" = I have a headache — habe = have = مجھے ہے',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'habe', en: 'have', ur: 'ہے'),
+          SentenceWord(de: 'Kopfschmerzen.', en: 'a headache.', ur: 'سر درد۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '👨‍⚕️',
+        grammarNote: '"brauche" = need = چاہیے — Akkusativ mein einen Arzt',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'brauche', en: 'need', ur: 'چاہیے'),
+          SentenceWord(de: 'einen', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'Arzt.', en: 'doctor.', ur: 'ڈاکٹر۔'),
+        ],
+      ),
+    ],
+  ),
+];

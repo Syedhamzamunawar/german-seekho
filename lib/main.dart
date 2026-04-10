@@ -1,6 +1,7 @@
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:german_seekho/data/a1_content.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -369,13 +370,20 @@ class HomeScreen extends StatelessWidget {
                   final level = levels[index];
                   return GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => LevelScreen(level: level),
-                        ),
-                      );
-                    },
+  if (level['level'] == 'A1') {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => A1TopicsScreen()),
+    );
+  } else {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => LevelScreen(level: level),
+      ),
+    );
+  }
+},
                     child: Container(
                       margin: EdgeInsets.only(bottom: 12),
                       padding: EdgeInsets.all(16),
@@ -921,6 +929,292 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+// ===================== A1 TOPICS SCREEN =====================
+class A1TopicsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0D1F17),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF1B4332),
+        title: Text('A1 — Topics', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+      body: ListView.builder(
+        padding: EdgeInsets.all(16),
+        itemCount: a1Topics.length,
+        itemBuilder: (context, index) {
+          final topic = a1Topics[index];
+          return GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => TopicDetailScreen(topic: topic),
+              ),
+            ),
+            child: Container(
+              margin: EdgeInsets.only(bottom: 12),
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Color(0xFF1B4332),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Color(0xFFD4AF37), width: 1),
+              ),
+              child: Row(
+                children: [
+                  Text(topic.emoji, style: TextStyle(fontSize: 36)),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(topic.title,
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                        Text(topic.urduTitle,
+                            style: TextStyle(color: Color(0xFFD4AF37), fontSize: 13)),
+                        Text('${topic.words.length} words  •  ${topic.sentences.length} sentences',
+                            style: TextStyle(color: Colors.white38, fontSize: 11)),
+                      ],
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_ios, color: Color(0xFFD4AF37), size: 16),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// ===================== TOPIC DETAIL SCREEN =====================
+class TopicDetailScreen extends StatefulWidget {
+  final A1Topic topic;
+  const TopicDetailScreen({required this.topic});
+
+  @override
+  State<TopicDetailScreen> createState() => _TopicDetailScreenState();
+}
+
+class _TopicDetailScreenState extends State<TopicDetailScreen> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+  final FlutterTts _tts = FlutterTts();
+  bool isSpeaking = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+    _setupTts();
+  }
+
+  void _setupTts() async {
+    await _tts.setLanguage('de-DE');
+    await _tts.setSpeechRate(0.5);
+    await _tts.setVolume(1.0);
+    _tts.setCompletionHandler(() => setState(() => isSpeaking = false));
+  }
+
+  void _speak(String text) async {
+    if (isSpeaking) {
+      await _tts.stop();
+      setState(() => isSpeaking = false);
+    } else {
+      setState(() => isSpeaking = true);
+      await _tts.speak(text);
+    }
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    _tts.stop();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0D1F17),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF1B4332),
+        title: Text('${widget.topic.emoji} ${widget.topic.title}',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        iconTheme: IconThemeData(color: Colors.white),
+        bottom: TabBar(
+          controller: _tabController,
+          indicatorColor: Color(0xFFD4AF37),
+          labelColor: Color(0xFFD4AF37),
+          unselectedLabelColor: Colors.white54,
+          tabs: [
+            Tab(text: '📖 Words'),
+            Tab(text: '💬 Sentences'),
+          ],
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          // WORDS TAB
+          ListView.builder(
+            padding: EdgeInsets.all(16),
+            itemCount: widget.topic.words.length,
+            itemBuilder: (context, index) {
+              final word = widget.topic.words[index];
+              return Container(
+                margin: EdgeInsets.only(bottom: 12),
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Color(0xFF1B4332),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Color(0xFFD4AF37).withOpacity(0.3)),
+                ),
+                child: Row(
+                  children: [
+                    Text(word.emoji, style: TextStyle(fontSize: 36)),
+                    SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(word.german,
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                          if (word.article.isNotEmpty)
+                            Text('Article: ${word.article} (${word.gender})',
+                                style: TextStyle(color: Color(0xFFD4AF37), fontSize: 11)),
+                          Text(word.english,
+                              style: TextStyle(color: Colors.white60, fontSize: 13)),
+                          Text(word.urdu,
+                              style: TextStyle(color: Color(0xFFD4AF37), fontSize: 13)),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () => _speak(word.german),
+                      child: CircleAvatar(
+                        backgroundColor: Color(0xFF2D6A4F),
+                        child: Icon(Icons.volume_up, color: Colors.white, size: 20),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+
+          // SENTENCES TAB
+          ListView.builder(
+            padding: EdgeInsets.all(16),
+            itemCount: widget.topic.sentences.length,
+            itemBuilder: (context, index) {
+              final sentence = widget.topic.sentences[index];
+              return Container(
+                margin: EdgeInsets.only(bottom: 16),
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Color(0xFF1B4332),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Color(0xFFD4AF37).withOpacity(0.3)),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Word by word
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: sentence.words.map((word) {
+                        return Container(
+                          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF0D1F17),
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: Color(0xFFD4AF37).withOpacity(0.3)),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(word.de,
+                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+                              Text(word.en,
+                                  style: TextStyle(color: Colors.white54, fontSize: 11)),
+                              Text(word.ur,
+                                  style: TextStyle(color: Color(0xFFD4AF37), fontSize: 11)),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    ),
+
+                    Divider(color: Colors.white12, height: 20),
+
+                    // Full sentence
+                    Row(
+                      children: [
+                        Text('🇩🇪', style: TextStyle(fontSize: 16)),
+                        SizedBox(width: 8),
+                        Expanded(child: Text(sentence.germanFull,
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                        GestureDetector(
+                          onTap: () => _speak(sentence.germanFull),
+                          child: CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Color(0xFF2D6A4F),
+                            child: Icon(Icons.volume_up, color: Colors.white, size: 16),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Text('🇬🇧', style: TextStyle(fontSize: 16)),
+                        SizedBox(width: 8),
+                        Expanded(child: Text(sentence.englishFull,
+                            style: TextStyle(color: Colors.white60))),
+                      ],
+                    ),
+                    SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Text('🇵🇰', style: TextStyle(fontSize: 16)),
+                        SizedBox(width: 8),
+                        Expanded(child: Text(sentence.urduFull,
+                            style: TextStyle(color: Color(0xFFD4AF37)),
+                            textDirection: TextDirection.rtl)),
+                      ],
+                    ),
+
+                    // Grammar Note
+                    if (sentence.grammarNote.isNotEmpty) ...[
+                      Divider(color: Colors.white12, height: 16),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Color(0xFF0D1F17),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          children: [
+                            Text('💡 ', style: TextStyle(fontSize: 14)),
+                            Expanded(
+                              child: Text(sentence.grammarNote,
+                                  style: TextStyle(color: Colors.white54, fontSize: 12)),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
