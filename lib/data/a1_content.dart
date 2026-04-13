@@ -85,19 +85,43 @@ const List<A1Topic> a1Topics = [
     emoji: '👋',
     words: [
       GermanWord(german: 'der Name', english: 'the Name', urdu: 'نام', article: 'der', gender: 'masculine — مذکر', emoji: '👤'),
+      GermanWord(german: 'der Vorname', english: 'the First Name', urdu: 'پہلا نام', article: 'der', gender: 'masculine — مذکر', emoji: '📝'),
+      GermanWord(german: 'der Nachname', english: 'the Last Name', urdu: 'خاندانی نام', article: 'der', gender: 'masculine — مذکر', emoji: '📝'),
       GermanWord(german: 'das Alter', english: 'the Age', urdu: 'عمر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎂'),
       GermanWord(german: 'das Land', english: 'the Country', urdu: 'ملک', article: 'das', gender: 'neutral — غیرجنس', emoji: '🌍'),
       GermanWord(german: 'die Stadt', english: 'the City', urdu: 'شہر', article: 'die', gender: 'feminine — مؤنث', emoji: '🏙️'),
       GermanWord(german: 'die Sprache', english: 'the Language', urdu: 'زبان', article: 'die', gender: 'feminine — مؤنث', emoji: '🗣️'),
       GermanWord(german: 'der Beruf', english: 'the Occupation', urdu: 'پیشہ', article: 'der', gender: 'masculine — مذکر', emoji: '💼'),
+      GermanWord(german: 'die Adresse', english: 'the Address', urdu: 'پتہ', article: 'die', gender: 'feminine — مؤنث', emoji: '🏠'),
+      GermanWord(german: 'die Telefonnummer', english: 'the Phone Number', urdu: 'فون نمبر', article: 'die', gender: 'feminine — مؤنث', emoji: '📞'),
+      GermanWord(german: 'die E-Mail', english: 'the Email', urdu: 'ای میل', article: 'die', gender: 'feminine — مؤنث', emoji: '📧'),
+      GermanWord(german: 'die Nationalität', english: 'the Nationality', urdu: 'قومیت', article: 'die', gender: 'feminine — مؤنث', emoji: '🌍'),
+      GermanWord(german: 'Pakistan', english: 'Pakistan', urdu: 'پاکستان', emoji: '🇵🇰'),
+      GermanWord(german: 'Deutschland', english: 'Germany', urdu: 'جرمنی', emoji: '🇩🇪'),
+      GermanWord(german: 'der Ingenieur', english: 'the Engineer', urdu: 'انجینیئر', article: 'der', gender: 'masculine — مذکر', emoji: '👷'),
+      GermanWord(german: 'der Arzt', english: 'the Doctor', urdu: 'ڈاکٹر', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍⚕️'),
+      GermanWord(german: 'der Lehrer', english: 'the Teacher', urdu: 'استاد', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍🏫'),
+      GermanWord(german: 'der Student', english: 'the Student', urdu: 'طالب علم', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍🎓'),
+      GermanWord(german: 'verheiratet', english: 'married', urdu: 'شادی شدہ', emoji: '💍'),
+      GermanWord(german: 'ledig', english: 'single', urdu: 'کنوارہ', emoji: '👤'),
     ],
     sentences: [
       GermanSentence(
         emoji: '👋',
-        grammarNote: '"heiße" verb "heißen" se aata hai — Ich ke saath heiße use hota hai',
+        grammarNote: '"heiße" verb "heißen" se aata hai — Ich ke saath heiße use hota hai — میرا نام ہے',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'heiße', en: 'am called', ur: 'کہلاتا ہوں'),
+          SentenceWord(de: 'Hamza.', en: 'Hamza.', ur: 'حمزہ۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '👤',
+        grammarNote: '"Mein Name ist" = My name is = میرا نام ہے — formal way',
+        words: [
+          SentenceWord(de: 'Mein', en: 'My', ur: 'میرا'),
+          SentenceWord(de: 'Name', en: 'name', ur: 'نام'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
           SentenceWord(de: 'Hamza.', en: 'Hamza.', ur: 'حمزہ۔'),
         ],
       ),
@@ -112,8 +136,18 @@ const List<A1Topic> a1Topics = [
         ],
       ),
       GermanSentence(
+        emoji: '🏙️',
+        grammarNote: '"wohne in" = live in = میں رہتا ہوں — wohnen verb hai',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'wohne', en: 'live', ur: 'رہتا ہوں'),
+          SentenceWord(de: 'in', en: 'in', ur: 'میں'),
+          SentenceWord(de: 'Ilmenau.', en: 'Ilmenau.', ur: 'المناؤ۔'),
+        ],
+      ),
+      GermanSentence(
         emoji: '🎂',
-        grammarNote: '"bin" verb "sein" se aata hai — Ich bin = I am = میں ہوں',
+        grammarNote: '"bin ... Jahre alt" = am ... years old — Jahre alt = سال کا',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
@@ -124,11 +158,11 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '💼',
-        grammarNote: '"bin" + Beruf — pیشہ batane ke liye koi article nahi lagta!',
+        grammarNote: 'Beruf batane mein koi article nahi lagta — Ich bin Student (kein Artikel!)',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
-          SentenceWord(de: 'Entwickler.', en: 'Developer.', ur: 'ڈویلپر۔'),
+          SentenceWord(de: 'Student.', en: 'a student.', ur: 'طالب علم۔'),
         ],
       ),
       GermanSentence(
@@ -142,9 +176,54 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'Englisch.', en: 'English.', ur: 'انگریزی۔'),
         ],
       ),
+      GermanSentence(
+        emoji: '📞',
+        grammarNote: '"Meine Nummer ist" = My number is = میرا نمبر ہے',
+        words: [
+          SentenceWord(de: 'Meine', en: 'My', ur: 'میرا'),
+          SentenceWord(de: 'Telefonnummer', en: 'phone number', ur: 'فون نمبر'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: '0123456789.', en: '0123456789.', ur: '0123456789۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💍',
+        grammarNote: '"bin verheiratet" = am married = شادی شدہ ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: 'verheiratet.', en: 'married.', ur: 'شادی شدہ۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❓',
+        grammarNote: '"Wie heißen Sie?" = What is your name? (formal) = آپ کا نام کیا ہے؟',
+        words: [
+          SentenceWord(de: 'Wie', en: 'What', ur: 'کیا'),
+          SentenceWord(de: 'heißen', en: 'is called', ur: 'کہلاتے ہیں'),
+          SentenceWord(de: 'Sie?', en: 'you? (formal)', ur: 'آپ؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❓',
+        grammarNote: '"Woher kommen Sie?" = Where do you come from? (formal)',
+        words: [
+          SentenceWord(de: 'Woher', en: 'Where from', ur: 'کہاں سے'),
+          SentenceWord(de: 'kommen', en: 'come', ur: 'آتے ہیں'),
+          SentenceWord(de: 'Sie?', en: 'you?', ur: 'آپ؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❓',
+        grammarNote: '"Wo wohnen Sie?" = Where do you live? (formal)',
+        words: [
+          SentenceWord(de: 'Wo', en: 'Where', ur: 'کہاں'),
+          SentenceWord(de: 'wohnen', en: 'live', ur: 'رہتے ہیں'),
+          SentenceWord(de: 'Sie?', en: 'you?', ur: 'آپ؟'),
+        ],
+      ),
     ],
   ),
-
   // =============================================
   // TOPIC 2 — ALPHABET & NUMBERS
   // =============================================
