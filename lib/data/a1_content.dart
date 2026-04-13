@@ -558,6 +558,7 @@ const List<A1Topic> a1Topics = [
     urduTitle: 'دن اور مہینے',
     emoji: '📅',
     words: [
+      // Days
       GermanWord(german: 'der Montag', english: 'Monday', urdu: 'پیر', article: 'der', gender: 'masculine — مذکر', emoji: '1️⃣'),
       GermanWord(german: 'der Dienstag', english: 'Tuesday', urdu: 'منگل', article: 'der', gender: 'masculine — مذکر', emoji: '2️⃣'),
       GermanWord(german: 'der Mittwoch', english: 'Wednesday', urdu: 'بدھ', article: 'der', gender: 'masculine — مذکر', emoji: '3️⃣'),
@@ -565,6 +566,7 @@ const List<A1Topic> a1Topics = [
       GermanWord(german: 'der Freitag', english: 'Friday', urdu: 'جمعہ', article: 'der', gender: 'masculine — مذکر', emoji: '5️⃣'),
       GermanWord(german: 'der Samstag', english: 'Saturday', urdu: 'ہفتہ', article: 'der', gender: 'masculine — مذکر', emoji: '6️⃣'),
       GermanWord(german: 'der Sonntag', english: 'Sunday', urdu: 'اتوار', article: 'der', gender: 'masculine — مذکر', emoji: '7️⃣'),
+      // Months
       GermanWord(german: 'der Januar', english: 'January', urdu: 'جنوری', article: 'der', gender: 'masculine — مذکر', emoji: '❄️'),
       GermanWord(german: 'der Februar', english: 'February', urdu: 'فروری', article: 'der', gender: 'masculine — مذکر', emoji: '💝'),
       GermanWord(german: 'der März', english: 'March', urdu: 'مارچ', article: 'der', gender: 'masculine — مذکر', emoji: '🌱'),
@@ -577,6 +579,18 @@ const List<A1Topic> a1Topics = [
       GermanWord(german: 'der Oktober', english: 'October', urdu: 'اکتوبر', article: 'der', gender: 'masculine — مذکر', emoji: '🎃'),
       GermanWord(german: 'der November', english: 'November', urdu: 'نومبر', article: 'der', gender: 'masculine — مذکر', emoji: '🌧️'),
       GermanWord(german: 'der Dezember', english: 'December', urdu: 'دسمبر', article: 'der', gender: 'masculine — مذکر', emoji: '🎄'),
+      // Time related
+      GermanWord(german: 'die Woche', english: 'the Week', urdu: 'ہفتہ', article: 'die', gender: 'feminine — مؤنث', emoji: '📅'),
+      GermanWord(german: 'das Wochenende', english: 'the Weekend', urdu: 'ویک اینڈ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎉'),
+      GermanWord(german: 'der Monat', english: 'the Month', urdu: 'مہینہ', article: 'der', gender: 'masculine — مذکر', emoji: '📆'),
+      GermanWord(german: 'das Jahr', english: 'the Year', urdu: 'سال', article: 'das', gender: 'neutral — غیرجنس', emoji: '🗓️'),
+      GermanWord(german: 'heute', english: 'today', urdu: 'آج', emoji: '📅'),
+      GermanWord(german: 'morgen', english: 'tomorrow', urdu: 'کل', emoji: '➡️'),
+      GermanWord(german: 'gestern', english: 'yesterday', urdu: 'کل (گزشتہ)', emoji: '⬅️'),
+      GermanWord(german: 'übermorgen', english: 'day after tomorrow', urdu: 'پرسوں', emoji: '⏭️'),
+      GermanWord(german: 'letzte Woche', english: 'last week', urdu: 'گزشتہ ہفتہ', emoji: '⬅️'),
+      GermanWord(german: 'nächste Woche', english: 'next week', urdu: 'اگلا ہفتہ', emoji: '➡️'),
+      GermanWord(german: 'das Datum', english: 'the Date', urdu: 'تاریخ', article: 'das', gender: 'neutral — غیرجنس', emoji: '📅'),
     ],
     sentences: [
       GermanSentence(
@@ -590,7 +604,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '🗓️',
-        grammarNote: '"im" = in the — mahine ke saath "im" use hota hai',
+        grammarNote: '"im" + Monat = in the month — im Januar = جنوری میں',
         words: [
           SentenceWord(de: 'Wir', en: 'We', ur: 'ہم'),
           SentenceWord(de: 'sind', en: 'are', ur: 'ہیں'),
@@ -598,9 +612,72 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'Januar.', en: 'January.', ur: 'جنوری۔'),
         ],
       ),
+      GermanSentence(
+        emoji: '➡️',
+        grammarNote: '"morgen" = tomorrow = کل — koi article nahi lagta',
+        words: [
+          SentenceWord(de: 'Morgen', en: 'Tomorrow', ur: 'کل'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'Dienstag.', en: 'Tuesday.', ur: 'منگل۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🎉',
+        grammarNote: '"am Wochenende" = on the weekend = ویک اینڈ پر — am = an + dem',
+        words: [
+          SentenceWord(de: 'Am', en: 'On the', ur: ''),
+          SentenceWord(de: 'Wochenende', en: 'weekend', ur: 'ویک اینڈ'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: 'ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'frei.', en: 'free.', ur: 'فارغ۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📆',
+        grammarNote: '"am" + Tag = on the day — am Montag = پیر کو',
+        words: [
+          SentenceWord(de: 'Am', en: 'On', ur: ''),
+          SentenceWord(de: 'Freitag', en: 'Friday', ur: 'جمعہ'),
+          SentenceWord(de: 'gehe', en: 'go', ur: 'جاتا ہوں'),
+          SentenceWord(de: 'ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'zur', en: 'to the', ur: ''),
+          SentenceWord(de: 'Moschee.', en: 'mosque.', ur: 'مسجد۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🎂',
+        grammarNote: '"im" + Monat — Geburtstag = birthday = سالگرہ',
+        words: [
+          SentenceWord(de: 'Mein', en: 'My', ur: 'میری'),
+          SentenceWord(de: 'Geburtstag', en: 'birthday', ur: 'سالگرہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'im', en: 'in', ur: ''),
+          SentenceWord(de: 'März.', en: 'March.', ur: 'مارچ میں۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📅',
+        grammarNote: '"Welcher Tag ist heute?" = What day is today? = آج کون سا دن ہے؟',
+        words: [
+          SentenceWord(de: 'Welcher', en: 'Which', ur: 'کون سا'),
+          SentenceWord(de: 'Tag', en: 'day', ur: 'دن'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'heute?', en: 'today?', ur: 'آج؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🗓️',
+        grammarNote: '"Welches Datum?" = What date? = کیا تاریخ ہے؟',
+        words: [
+          SentenceWord(de: 'Welches', en: 'What', ur: 'کیا'),
+          SentenceWord(de: 'Datum', en: 'date', ur: 'تاریخ'),
+          SentenceWord(de: 'haben', en: 'do we have', ur: 'ہے'),
+          SentenceWord(de: 'wir', en: 'we', ur: 'ہم'),
+          SentenceWord(de: 'heute?', en: 'today?', ur: 'آج؟'),
+        ],
+      ),
     ],
   ),
-
   // =============================================
   // TOPIC 5 — TIME
   // =============================================
