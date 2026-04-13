@@ -225,10 +225,10 @@ const List<A1Topic> a1Topics = [
     ],
   ),
   // =============================================
-  // TOPIC 2 — ALPHABET & NUMBERS
+  // TOPIC 2 — NUMBERS
   // =============================================
   A1Topic(
-    title: 'Numbers',
+    title: 'Numbers — Zahlen',
     urduTitle: 'گنتی',
     emoji: '🔢',
     words: [
@@ -243,38 +243,99 @@ const List<A1Topic> a1Topics = [
       GermanWord(german: 'acht', english: 'eight', urdu: 'آٹھ', emoji: '8️⃣'),
       GermanWord(german: 'neun', english: 'nine', urdu: 'نو', emoji: '9️⃣'),
       GermanWord(german: 'zehn', english: 'ten', urdu: 'دس', emoji: '🔟'),
+      GermanWord(german: 'elf', english: 'eleven', urdu: 'گیارہ', emoji: '1️⃣1️⃣'),
+      GermanWord(german: 'zwölf', english: 'twelve', urdu: 'بارہ', emoji: '1️⃣2️⃣'),
+      GermanWord(german: 'dreizehn', english: 'thirteen', urdu: 'تیرہ', emoji: '1️⃣3️⃣'),
+      GermanWord(german: 'vierzehn', english: 'fourteen', urdu: 'چودہ', emoji: '1️⃣4️⃣'),
+      GermanWord(german: 'fünfzehn', english: 'fifteen', urdu: 'پندرہ', emoji: '1️⃣5️⃣'),
+      GermanWord(german: 'sechzehn', english: 'sixteen', urdu: 'سولہ', emoji: '1️⃣6️⃣'),
+      GermanWord(german: 'siebzehn', english: 'seventeen', urdu: 'سترہ', emoji: '1️⃣7️⃣'),
+      GermanWord(german: 'achtzehn', english: 'eighteen', urdu: 'اٹھارہ', emoji: '1️⃣8️⃣'),
+      GermanWord(german: 'neunzehn', english: 'nineteen', urdu: 'انیس', emoji: '1️⃣9️⃣'),
       GermanWord(german: 'zwanzig', english: 'twenty', urdu: 'بیس', emoji: '2️⃣0️⃣'),
+      GermanWord(german: 'einundzwanzig', english: 'twenty one', urdu: 'اکیس', emoji: '2️⃣1️⃣'),
       GermanWord(german: 'dreißig', english: 'thirty', urdu: 'تیس', emoji: '3️⃣0️⃣'),
+      GermanWord(german: 'vierzig', english: 'forty', urdu: 'چالیس', emoji: '4️⃣0️⃣'),
+      GermanWord(german: 'fünfzig', english: 'fifty', urdu: 'پچاس', emoji: '5️⃣0️⃣'),
+      GermanWord(german: 'sechzig', english: 'sixty', urdu: 'ساٹھ', emoji: '6️⃣0️⃣'),
+      GermanWord(german: 'siebzig', english: 'seventy', urdu: 'ستر', emoji: '7️⃣0️⃣'),
+      GermanWord(german: 'achtzig', english: 'eighty', urdu: 'اسی', emoji: '8️⃣0️⃣'),
+      GermanWord(german: 'neunzig', english: 'ninety', urdu: 'نوے', emoji: '9️⃣0️⃣'),
       GermanWord(german: 'hundert', english: 'hundred', urdu: 'سو', emoji: '💯'),
+      GermanWord(german: 'tausend', english: 'thousand', urdu: 'ہزار', emoji: '1️⃣0️⃣0️⃣0️⃣'),
+      GermanWord(german: 'erste', english: 'first', urdu: 'پہلا', emoji: '🥇'),
+      GermanWord(german: 'zweite', english: 'second', urdu: 'دوسرا', emoji: '🥈'),
+      GermanWord(german: 'dritte', english: 'third', urdu: 'تیسرا', emoji: '🥉'),
     ],
     sentences: [
       GermanSentence(
-        emoji: '📞',
-        grammarNote: '"ist" = is = ہے — meine = my = میری',
-        words: [
-          SentenceWord(de: 'Meine', en: 'My', ur: 'میری'),
-          SentenceWord(de: 'Nummer', en: 'number', ur: 'نمبر'),
-          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
-          SentenceWord(de: '0123456789.', en: '0123456789.', ur: '0123456789۔'),
-        ],
-      ),
-      GermanSentence(
         emoji: '🎂',
-        grammarNote: '"bin" = am — Jahre alt = years old',
+        grammarNote: '"bin ... Jahre alt" = am ... years old = ... سال کا ہوں',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
-          SentenceWord(de: 'zwanzig', en: 'twenty', ur: 'بیس'),
+          SentenceWord(de: 'fünfundzwanzig', en: 'twenty five', ur: 'پچیس'),
           SentenceWord(de: 'Jahre', en: 'years', ur: 'سال'),
           SentenceWord(de: 'alt.', en: 'old.', ur: 'کا۔'),
         ],
       ),
+      GermanSentence(
+        emoji: '📞',
+        grammarNote: '"Meine Nummer ist" = My number is = میرا نمبر ہے',
+        words: [
+          SentenceWord(de: 'Meine', en: 'My', ur: 'میرا'),
+          SentenceWord(de: 'Nummer', en: 'number', ur: 'نمبر'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'null', en: 'zero', ur: 'صفر'),
+          SentenceWord(de: 'eins', en: 'one', ur: 'ایک'),
+          SentenceWord(de: 'zwei.', en: 'two.', ur: 'دو۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🛒',
+        grammarNote: '"kostet" = costs = کا ہے — price batane ke liye',
+        words: [
+          SentenceWord(de: 'Das', en: 'That', ur: 'یہ'),
+          SentenceWord(de: 'kostet', en: 'costs', ur: 'کا ہے'),
+          SentenceWord(de: 'fünf', en: 'five', ur: 'پانچ'),
+          SentenceWord(de: 'Euro.', en: 'euros.', ur: 'یورو۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🏠',
+        grammarNote: '"wohne im ... Stock" = live on ... floor = ... منزل پر رہتا ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'wohne', en: 'live', ur: 'رہتا ہوں'),
+          SentenceWord(de: 'im', en: 'on the', ur: ''),
+          SentenceWord(de: 'dritten', en: 'third', ur: 'تیسری'),
+          SentenceWord(de: 'Stock.', en: 'floor.', ur: 'منزل پر۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🚌',
+        grammarNote: '"Linie" = line/route = لائن — bus number batane ke liye',
+        words: [
+          SentenceWord(de: 'Nehmen', en: 'Take', ur: 'لو'),
+          SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
+          SentenceWord(de: 'die', en: 'the', ur: ''),
+          SentenceWord(de: 'Linie', en: 'line', ur: 'لائن'),
+          SentenceWord(de: 'zehn.', en: 'ten.', ur: 'دس۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💯',
+        grammarNote: '"hundert Prozent" = hundred percent = سو فیصد',
+        words: [
+          SentenceWord(de: 'Das', en: 'That', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'hundert', en: 'hundred', ur: 'سو'),
+          SentenceWord(de: 'Prozent', en: 'percent', ur: 'فیصد'),
+          SentenceWord(de: 'richtig!', en: 'correct!', ur: 'درست!'),
+        ],
+      ),
     ],
   ),
-
-  // =============================================
-  // TOPIC 3 — ARTICLES der/die/das
-  // =============================================
   // =============================================
   // TOPIC 3 — ARTICLES der/die/das
   // =============================================
