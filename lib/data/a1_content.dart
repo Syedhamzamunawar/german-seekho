@@ -196,28 +196,95 @@ const List<A1Topic> a1Topics = [
   // =============================================
   // TOPIC 3 — ARTICLES der/die/das
   // =============================================
+  // =============================================
+  // TOPIC 3 — ARTICLES der/die/das
+  // =============================================
   A1Topic(
     title: 'Articles — der/die/das',
     urduTitle: 'اسم کی جنس — der/die/das',
     emoji: '📖',
     words: [
+      // ===== DER (Masculine — مذکر) =====
       GermanWord(german: 'der Mann', english: 'the Man', urdu: 'مرد', article: 'der', gender: 'masculine — مذکر', emoji: '👨'),
       GermanWord(german: 'der Vater', english: 'the Father', urdu: 'باپ', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍👧'),
       GermanWord(german: 'der Bruder', english: 'the Brother', urdu: 'بھائی', article: 'der', gender: 'masculine — مذکر', emoji: '👦'),
       GermanWord(german: 'der Sohn', english: 'the Son', urdu: 'بیٹا', article: 'der', gender: 'masculine — مذکر', emoji: '👦'),
+      GermanWord(german: 'der Onkel', english: 'the Uncle', urdu: 'چچا/ماموں', article: 'der', gender: 'masculine — مذکر', emoji: '👴'),
+      GermanWord(german: 'der Großvater', english: 'the Grandfather', urdu: 'دادا/نانا', article: 'der', gender: 'masculine — مذکر', emoji: '👴'),
+      GermanWord(german: 'der Freund', english: 'the Friend (male)', urdu: 'دوست', article: 'der', gender: 'masculine — مذکر', emoji: '🤝'),
+      GermanWord(german: 'der Lehrer', english: 'the Teacher (male)', urdu: 'استاد', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍🏫'),
+      GermanWord(german: 'der Arzt', english: 'the Doctor (male)', urdu: 'ڈاکٹر', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍⚕️'),
+      GermanWord(german: 'der Ingenieur', english: 'the Engineer', urdu: 'انجینیئر', article: 'der', gender: 'masculine — مذکر', emoji: '👷'),
+      GermanWord(german: 'der Student', english: 'the Student (male)', urdu: 'طالب علم', article: 'der', gender: 'masculine — مذکر', emoji: '👨‍🎓'),
+      GermanWord(german: 'der Apfel', english: 'the Apple', urdu: 'سیب', article: 'der', gender: 'masculine — مذکر', emoji: '🍎'),
+      GermanWord(german: 'der Tisch', english: 'the Table', urdu: 'میز', article: 'der', gender: 'masculine — مذکر', emoji: '🪑'),
+      GermanWord(german: 'der Stuhl', english: 'the Chair', urdu: 'کرسی', article: 'der', gender: 'masculine — مذکر', emoji: '🪑'),
+      GermanWord(german: 'der Computer', english: 'the Computer', urdu: 'کمپیوٹر', article: 'der', gender: 'masculine — مذکر', emoji: '💻'),
+      GermanWord(german: 'der Stift', english: 'the Pen', urdu: 'قلم', article: 'der', gender: 'masculine — مذکر', emoji: '✏️'),
+      GermanWord(german: 'der Schlüssel', english: 'the Key', urdu: 'چابی', article: 'der', gender: 'masculine — مذکر', emoji: '🔑'),
+      GermanWord(german: 'der Bahnhof', english: 'the Train Station', urdu: 'ریلوے اسٹیشن', article: 'der', gender: 'masculine — مذکر', emoji: '🚉'),
+      GermanWord(german: 'der Bus', english: 'the Bus', urdu: 'بس', article: 'der', gender: 'masculine — مذکر', emoji: '🚌'),
+      GermanWord(german: 'der Zug', english: 'the Train', urdu: 'ٹرین', article: 'der', gender: 'masculine — مذکر', emoji: '🚂'),
+      GermanWord(german: 'der Kaffee', english: 'the Coffee', urdu: 'کافی', article: 'der', gender: 'masculine — مذکر', emoji: '☕'),
+      GermanWord(german: 'der Tee', english: 'the Tea', urdu: 'چائے', article: 'der', gender: 'masculine — مذکر', emoji: '🍵'),
+      GermanWord(german: 'der Reis', english: 'the Rice', urdu: 'چاول', article: 'der', gender: 'masculine — مذکر', emoji: '🍚'),
+      GermanWord(german: 'der Supermarkt', english: 'the Supermarket', urdu: 'سپر مارکیٹ', article: 'der', gender: 'masculine — مذکر', emoji: '🛒'),
+      GermanWord(german: 'der Park', english: 'the Park', urdu: 'پارک', article: 'der', gender: 'masculine — مذکر', emoji: '🌳'),
+
+      // ===== DIE (Feminine — مؤنث) =====
       GermanWord(german: 'die Frau', english: 'the Woman', urdu: 'عورت', article: 'die', gender: 'feminine — مؤنث', emoji: '👩'),
       GermanWord(german: 'die Mutter', english: 'the Mother', urdu: 'ماں', article: 'die', gender: 'feminine — مؤنث', emoji: '👩‍👧'),
       GermanWord(german: 'die Schwester', english: 'the Sister', urdu: 'بہن', article: 'die', gender: 'feminine — مؤنث', emoji: '👧'),
       GermanWord(german: 'die Tochter', english: 'the Daughter', urdu: 'بیٹی', article: 'die', gender: 'feminine — مؤنث', emoji: '👧'),
+      GermanWord(german: 'die Tante', english: 'the Aunt', urdu: 'چچی/خالہ', article: 'die', gender: 'feminine — مؤنث', emoji: '👵'),
+      GermanWord(german: 'die Großmutter', english: 'the Grandmother', urdu: 'دادی/نانی', article: 'die', gender: 'feminine — مؤنث', emoji: '👵'),
+      GermanWord(german: 'die Freundin', english: 'the Friend (female)', urdu: 'سہیلی', article: 'die', gender: 'feminine — مؤنث', emoji: '🤝'),
+      GermanWord(german: 'die Lehrerin', english: 'the Teacher (female)', urdu: 'استانی', article: 'die', gender: 'feminine — مؤنث', emoji: '👩‍🏫'),
+      GermanWord(german: 'die Ärztin', english: 'the Doctor (female)', urdu: 'ڈاکٹرنی', article: 'die', gender: 'feminine — مؤنث', emoji: '👩‍⚕️'),
+      GermanWord(german: 'die Studentin', english: 'the Student (female)', urdu: 'طالبہ', article: 'die', gender: 'feminine — مؤنث', emoji: '👩‍🎓'),
+      GermanWord(german: 'die Schule', english: 'the School', urdu: 'سکول', article: 'die', gender: 'feminine — مؤنث', emoji: '🏫'),
+      GermanWord(german: 'die Universität', english: 'the University', urdu: 'یونیورسٹی', article: 'die', gender: 'feminine — مؤنث', emoji: '🎓'),
+      GermanWord(german: 'die Stadt', english: 'the City', urdu: 'شہر', article: 'die', gender: 'feminine — مؤنث', emoji: '🏙️'),
+      GermanWord(german: 'die Straße', english: 'the Street', urdu: 'سڑک', article: 'die', gender: 'feminine — مؤنث', emoji: '🛣️'),
+      GermanWord(german: 'die Küche', english: 'the Kitchen', urdu: 'باورچی خانہ', article: 'die', gender: 'feminine — مؤنث', emoji: '🍳'),
+      GermanWord(german: 'die Tür', english: 'the Door', urdu: 'دروازہ', article: 'die', gender: 'feminine — مؤنث', emoji: '🚪'),
+      GermanWord(german: 'die Milch', english: 'the Milk', urdu: 'دودھ', article: 'die', gender: 'feminine — مؤنث', emoji: '🥛'),
+      GermanWord(german: 'die Banane', english: 'the Banana', urdu: 'کیلا', article: 'die', gender: 'feminine — مؤنث', emoji: '🍌'),
+      GermanWord(german: 'die Zeitung', english: 'the Newspaper', urdu: 'اخبار', article: 'die', gender: 'feminine — مؤنث', emoji: '📰'),
+      GermanWord(german: 'die Tasche', english: 'the Bag', urdu: 'بیگ', article: 'die', gender: 'feminine — مؤنث', emoji: '👜'),
+      GermanWord(german: 'die Uhr', english: 'the Clock/Watch', urdu: 'گھڑی', article: 'die', gender: 'feminine — مؤنث', emoji: '⌚'),
+      GermanWord(german: 'die Sprache', english: 'the Language', urdu: 'زبان', article: 'die', gender: 'feminine — مؤنث', emoji: '🗣️'),
+      GermanWord(german: 'die Arbeit', english: 'the Work', urdu: 'کام', article: 'die', gender: 'feminine — مؤنث', emoji: '💼'),
+      GermanWord(german: 'die Wohnung', english: 'the Apartment', urdu: 'اپارٹمنٹ', article: 'die', gender: 'feminine — مؤنث', emoji: '🏠'),
+      GermanWord(german: 'die Apotheke', english: 'the Pharmacy', urdu: 'دوا خانہ', article: 'die', gender: 'feminine — مؤنث', emoji: '💊'),
+
+      // ===== DAS (Neutral — غیرجنس) =====
       GermanWord(german: 'das Kind', english: 'the Child', urdu: 'بچہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🧒'),
       GermanWord(german: 'das Baby', english: 'the Baby', urdu: 'بچہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '👶'),
       GermanWord(german: 'das Buch', english: 'the Book', urdu: 'کتاب', article: 'das', gender: 'neutral — غیرجنس', emoji: '📚'),
       GermanWord(german: 'das Auto', english: 'the Car', urdu: 'گاڑی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🚗'),
+      GermanWord(german: 'das Haus', english: 'the House', urdu: 'گھر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏠'),
+      GermanWord(german: 'das Zimmer', english: 'the Room', urdu: 'کمرہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🛏️'),
+      GermanWord(german: 'das Bett', english: 'the Bed', urdu: 'بستر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🛏️'),
+      GermanWord(german: 'das Fenster', english: 'the Window', urdu: 'کھڑکی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🪟'),
+      GermanWord(german: 'das Telefon', english: 'the Phone', urdu: 'فون', article: 'das', gender: 'neutral — غیرجنس', emoji: '📱'),
+      GermanWord(german: 'das Wasser', english: 'the Water', urdu: 'پانی', article: 'das', gender: 'neutral — غیرجنس', emoji: '💧'),
+      GermanWord(german: 'das Brot', english: 'the Bread', urdu: 'روٹی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🍞'),
+      GermanWord(german: 'das Ei', english: 'the Egg', urdu: 'انڈہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🥚'),
+      GermanWord(german: 'das Restaurant', english: 'the Restaurant', urdu: 'ریستوران', article: 'das', gender: 'neutral — غیرجنس', emoji: '🍽️'),
+      GermanWord(german: 'das Hotel', english: 'the Hotel', urdu: 'ہوٹل', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏨'),
+      GermanWord(german: 'das Krankenhaus', english: 'the Hospital', urdu: 'ہسپتال', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏥'),
+      GermanWord(german: 'das Geld', english: 'the Money', urdu: 'پیسے', article: 'das', gender: 'neutral — غیرجنس', emoji: '💰'),
+      GermanWord(german: 'das Land', english: 'the Country', urdu: 'ملک', article: 'das', gender: 'neutral — غیرجنس', emoji: '🌍'),
+      GermanWord(german: 'das Wetter', english: 'the Weather', urdu: 'موسم', article: 'das', gender: 'neutral — غیرجنس', emoji: '🌤️'),
+      GermanWord(german: 'das Büro', english: 'the Office', urdu: 'دفتر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏢'),
+      GermanWord(german: 'das Hemd', english: 'the Shirt', urdu: 'قمیض', article: 'das', gender: 'neutral — غیرجنس', emoji: '👕'),
     ],
     sentences: [
+      // DER sentences
       GermanSentence(
         emoji: '👨',
-        grammarNote: '"Das ist" = This is = یہ ہے — har noun ke liye article yaad karo!',
+        grammarNote: 'der = masculine article — Mann, Vater, Bruder sab der hain',
         words: [
           SentenceWord(de: 'Das', en: 'This', ur: 'یہ'),
           SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
@@ -225,6 +292,38 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'Mann.', en: 'man.', ur: 'مرد۔'),
         ],
       ),
+      GermanSentence(
+        emoji: '👨‍🏫',
+        grammarNote: 'Beruf batane mein article nahi lagta — Ich bin Lehrer (kein Artikel!)',
+        words: [
+          SentenceWord(de: 'Er', en: 'He', ur: 'وہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Lehrer.', en: 'teacher.', ur: 'استاد۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '☕',
+        grammarNote: 'Akkusativ — der → einen: Ich trinke einen Kaffee',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'trinke', en: 'drink', ur: 'پیتا ہوں'),
+          SentenceWord(de: 'einen', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'Kaffee.', en: 'coffee.', ur: 'کافی۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🚌',
+        grammarNote: 'mit + Dativ — der Bus → dem Bus: mit dem Bus fahren',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'fahre', en: 'travel', ur: 'سفر کرتا ہوں'),
+          SentenceWord(de: 'mit', en: 'by', ur: 'سے'),
+          SentenceWord(de: 'dem', en: 'the', ur: ''),
+          SentenceWord(de: 'Bus.', en: 'bus.', ur: 'بس۔'),
+        ],
+      ),
+      // DIE sentences
       GermanSentence(
         emoji: '👩',
         grammarNote: 'die = feminine article — Frau, Mutter, Schwester sab die hain',
@@ -236,6 +335,39 @@ const List<A1Topic> a1Topics = [
         ],
       ),
       GermanSentence(
+        emoji: '🏫',
+        grammarNote: 'in + Dativ — die Schule → der Schule: in der Schule',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'lerne', en: 'learn', ur: 'سیکھتا ہوں'),
+          SentenceWord(de: 'in', en: 'in', ur: 'میں'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Schule.', en: 'school.', ur: 'سکول۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🏙️',
+        grammarNote: 'Akkusativ — die → eine: Ich suche eine Stadt',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'wohne', en: 'live', ur: 'رہتا ہوں'),
+          SentenceWord(de: 'in', en: 'in', ur: 'میں'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Stadt.', en: 'city.', ur: 'شہر۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💼',
+        grammarNote: 'die Arbeit — feminine — Ich gehe zur Arbeit (zu + der = zur)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'gehe', en: 'go', ur: 'جاتا ہوں'),
+          SentenceWord(de: 'zur', en: 'to the', ur: ''),
+          SentenceWord(de: 'Arbeit.', en: 'work.', ur: 'کام پر۔'),
+        ],
+      ),
+      // DAS sentences
+      GermanSentence(
         emoji: '🧒',
         grammarNote: 'das = neutral article — Kind, Baby, Buch sab das hain',
         words: [
@@ -243,6 +375,36 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
           SentenceWord(de: 'das', en: 'the', ur: ''),
           SentenceWord(de: 'Kind.', en: 'child.', ur: 'بچہ۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🏠',
+        grammarNote: 'das Haus — neutral — in dem Haus = im Haus (in + dem = im)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'wohne', en: 'live', ur: 'رہتا ہوں'),
+          SentenceWord(de: 'im', en: 'in the', ur: ''),
+          SentenceWord(de: 'Haus.', en: 'house.', ur: 'گھر میں۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📚',
+        grammarNote: 'Akkusativ — das → ein: Ich lese ein Buch',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'lese', en: 'read', ur: 'پڑھتا ہوں'),
+          SentenceWord(de: 'ein', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'Buch.', en: 'book.', ur: 'کتاب۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💰',
+        grammarNote: 'das Geld — neutral — Ich habe kein Geld (kein = no)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'habe', en: 'have', ur: 'ہے'),
+          SentenceWord(de: 'kein', en: 'no', ur: 'کوئی نہیں'),
+          SentenceWord(de: 'Geld.', en: 'money.', ur: 'پیسے۔'),
         ],
       ),
     ],

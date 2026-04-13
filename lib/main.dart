@@ -1,3 +1,4 @@
+import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -732,6 +733,7 @@ class LessonDetailScreen extends StatefulWidget {
 class _LessonDetailScreenState extends State<LessonDetailScreen> {
   final FlutterTts _tts = FlutterTts();
   bool isSpeaking = false;
+  
 
   @override
   void initState() {
@@ -1005,13 +1007,19 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> with SingleTicker
   late TabController _tabController;
   final FlutterTts _tts = FlutterTts();
   bool isSpeaking = false;
+  final SpeechToText _speech = SpeechToText();
+int listeningIndex = -1;
+String spokenText = '';
+bool speechAvailable = false;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
     _setupTts();
+    _initSpeech();
   }
+  
 
   void _setupTts() async {
     await _tts.setLanguage('de-DE');
@@ -1019,7 +1027,74 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> with SingleTicker
     await _tts.setVolume(1.0);
     _tts.setCompletionHandler(() => setState(() => isSpeaking = false));
   }
+void _initSpeech() async {
+  speechAvailable = await _speech.initialize();
+  setState(() {});
+}
 
+void _startListening(String correctText, int index) async {
+  if (!speechAvailable) return;
+  setState(() => listeningIndex = index);
+  await _speech.listen(
+    onResult: (result) {
+      setState(() {
+        spokenText = result.recognizedWords;
+      });
+      if (result.finalResult) {
+        _checkAnswer(correctText);
+      }
+    },
+    listenFor: Duration(seconds: 5),
+    pauseFor: Duration(milliseconds: 500),
+    localeId: 'de_DE',
+  );
+}
+
+void _stopListening() async {
+  await _speech.stop();
+  setState(() => listeningIndex = -1);
+}
+void _checkAnswer(String correctText) {
+  _speech.stop();
+  setState(() => listeningIndex = -1);
+  
+  String spoken = spokenText.toLowerCase().trim();
+  String correct = correctText.toLowerCase().trim();
+  
+  bool isCorrect = spoken == correct || 
+                   correct.contains(spoken) || 
+                   spoken.contains(correct);
+  
+  showDialog(
+    context: context,
+    builder: (_) => AlertDialog(
+      backgroundColor: Color(0xFF1B4332),
+      title: Text(
+        isCorrect ? '✅ Shabash!' : '❌ Try Again!',
+        style: TextStyle(color: isCorrect ? Colors.green : Colors.red),
+      ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Tumne bola:', style: TextStyle(color: Colors.white54, fontSize: 12)),
+          Text(spokenText.isEmpty ? '(kuch nahi suna)' : spokenText,
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+          SizedBox(height: 8),
+          Text('Sahi jawab:', style: TextStyle(color: Colors.white54, fontSize: 12)),
+          Text(correctText, 
+              style: TextStyle(color: Color(0xFFD4AF37), fontWeight: FontWeight.bold)),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text('OK', style: TextStyle(color: Color(0xFFD4AF37))),
+        ),
+      ],
+    ),
+  );
+}
   void _speak(String text) async {
     if (isSpeaking) {
       await _tts.stop();
@@ -1167,6 +1242,26 @@ class _TopicDetailScreenState extends State<TopicDetailScreen> with SingleTicker
                             child: Icon(Icons.volume_up, color: Colors.white, size: 16),
                           ),
                         ),
+                        SizedBox(width: 8),
+GestureDetector(
+  onTap: () {
+    if (listeningIndex == index) {
+      _stopListening();
+    } else {
+      setState(() => listeningIndex = index);
+      _startListening(sentence.germanFull, index);
+    }
+  },
+  child: CircleAvatar(
+    radius: 16,
+    backgroundColor: listeningIndex == index ? Colors.red : Color(0xFFD4AF37),
+    child: Icon(
+      listeningIndex == index ? Icons.stop : Icons.mic,
+      color: Colors.white,
+      size: 16,
+    ),
+  ),
+),
                       ],
                     ),
                     SizedBox(height: 4),
