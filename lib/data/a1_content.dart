@@ -1186,13 +1186,29 @@ const List<A1Topic> a1Topics = [
     words: [
       GermanWord(german: 'die Stadt', english: 'the City', urdu: 'شہر', article: 'die', gender: 'feminine — مؤنث', emoji: '🏙️'),
       GermanWord(german: 'die Straße', english: 'the Street', urdu: 'سڑک', article: 'die', gender: 'feminine — مؤنث', emoji: '🛣️'),
+      GermanWord(german: 'der Platz', english: 'the Square', urdu: 'چوک', article: 'der', gender: 'masculine — مذکر', emoji: '🏛️'),
       GermanWord(german: 'der Bahnhof', english: 'the Train Station', urdu: 'ریلوے اسٹیشن', article: 'der', gender: 'masculine — مذکر', emoji: '🚉'),
       GermanWord(german: 'die Bank', english: 'the Bank', urdu: 'بینک', article: 'die', gender: 'feminine — مؤنث', emoji: '🏦'),
       GermanWord(german: 'das Krankenhaus', english: 'the Hospital', urdu: 'ہسپتال', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏥'),
       GermanWord(german: 'die Apotheke', english: 'the Pharmacy', urdu: 'دوا خانہ', article: 'die', gender: 'feminine — مؤنث', emoji: '💊'),
+      GermanWord(german: 'der Supermarkt', english: 'the Supermarket', urdu: 'سپر مارکیٹ', article: 'der', gender: 'masculine — مذکر', emoji: '🛒'),
+      GermanWord(german: 'die Post', english: 'the Post Office', urdu: 'ڈاک خانہ', article: 'die', gender: 'feminine — مؤنث', emoji: '📮'),
+      GermanWord(german: 'die Polizei', english: 'the Police', urdu: 'پولیس', article: 'die', gender: 'feminine — مؤنث', emoji: '👮'),
+      GermanWord(german: 'die Kirche', english: 'the Church', urdu: 'گرجا گھر', article: 'die', gender: 'feminine — مؤنث', emoji: '⛪'),
+      GermanWord(german: 'die Moschee', english: 'the Mosque', urdu: 'مسجد', article: 'die', gender: 'feminine — مؤنث', emoji: '🕌'),
+      GermanWord(german: 'der Park', english: 'the Park', urdu: 'پارک', article: 'der', gender: 'masculine — مذکر', emoji: '🌳'),
+      GermanWord(german: 'das Museum', english: 'the Museum', urdu: 'عجائب گھر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏛️'),
+      GermanWord(german: 'die Bushaltestelle', english: 'the Bus Stop', urdu: 'بس اسٹاپ', article: 'die', gender: 'feminine — مؤنث', emoji: '🚌'),
       GermanWord(german: 'links', english: 'left', urdu: 'بائیں', emoji: '⬅️'),
       GermanWord(german: 'rechts', english: 'right', urdu: 'دائیں', emoji: '➡️'),
       GermanWord(german: 'geradeaus', english: 'straight ahead', urdu: 'سیدھا', emoji: '⬆️'),
+      GermanWord(german: 'nah', english: 'near', urdu: 'قریب', emoji: '📍'),
+      GermanWord(german: 'weit', english: 'far', urdu: 'دور', emoji: '🗺️'),
+      GermanWord(german: 'die Kreuzung', english: 'the Crossroads', urdu: 'چوراہا', article: 'die', gender: 'feminine — مؤنث', emoji: '🚦'),
+      GermanWord(german: 'die Ampel', english: 'the Traffic Light', urdu: 'ٹریفک لائٹ', article: 'die', gender: 'feminine — مؤنث', emoji: '🚦'),
+      GermanWord(german: 'die Brücke', english: 'the Bridge', urdu: 'پل', article: 'die', gender: 'feminine — مؤنث', emoji: '🌉'),
+      GermanWord(german: 'der Weg', english: 'the Way/Path', urdu: 'راستہ', article: 'der', gender: 'masculine — مذکر', emoji: '🛤️'),
+      GermanWord(german: 'entlang', english: 'along', urdu: 'ساتھ ساتھ', emoji: '➡️'),
     ],
     sentences: [
       GermanSentence(
@@ -1207,7 +1223,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '➡️',
-        grammarNote: '"Gehen Sie" = Go (formal) = جائیں — formal command',
+        grammarNote: '"Gehen Sie geradeaus" = Go straight = سیدھے جائیں — formal command',
         words: [
           SentenceWord(de: 'Gehen', en: 'Go', ur: 'جائیں'),
           SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
@@ -1216,9 +1232,75 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'links.', en: 'left.', ur: 'بائیں۔'),
         ],
       ),
+      GermanSentence(
+        emoji: '📍',
+        grammarNote: '"in der Nähe" = nearby = قریب میں — Nähe = nearness',
+        words: [
+          SentenceWord(de: 'Ist', en: 'Is', ur: 'کیا'),
+          SentenceWord(de: 'das', en: 'the', ur: ''),
+          SentenceWord(de: 'Hotel', en: 'hotel', ur: 'ہوٹل'),
+          SentenceWord(de: 'in', en: 'in', ur: ''),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Nähe?', en: 'nearby?', ur: 'قریب ہے؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🚦',
+        grammarNote: '"an der Ampel" = at the traffic light = ٹریفک لائٹ پر',
+        words: [
+          SentenceWord(de: 'Biegen', en: 'Turn', ur: 'مڑیں'),
+          SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
+          SentenceWord(de: 'an', en: 'at', ur: ''),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Ampel', en: 'traffic light', ur: 'ٹریفک لائٹ'),
+          SentenceWord(de: 'rechts.', en: 'right.', ur: 'دائیں۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🕌',
+        grammarNote: '"zur Moschee" = to the mosque = مسجد کی طرف — zu + der = zur',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'gehe', en: 'go', ur: 'جاتا ہوں'),
+          SentenceWord(de: 'zur', en: 'to the', ur: ''),
+          SentenceWord(de: 'Moschee.', en: 'mosque.', ur: 'مسجد۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🚌',
+        grammarNote: '"an der Bushaltestelle" = at the bus stop = بس اسٹاپ پر',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'warte', en: 'wait', ur: 'انتظار کرتا ہوں'),
+          SentenceWord(de: 'an', en: 'at', ur: ''),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Bushaltestelle.', en: 'bus stop.', ur: 'بس اسٹاپ پر۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❓',
+        grammarNote: '"Entschuldigung" = Excuse me = معاف کیجیے — politeness ke liye',
+        words: [
+          SentenceWord(de: 'Entschuldigung,', en: 'Excuse me,', ur: 'معاف کیجیے،'),
+          SentenceWord(de: 'wo', en: 'where', ur: 'کہاں'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'die', en: 'the', ur: ''),
+          SentenceWord(de: 'Post?', en: 'post office?', ur: 'ڈاک خانہ؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🌉',
+        grammarNote: '"über die Brücke" = over the bridge = پل کے اوپر سے',
+        words: [
+          SentenceWord(de: 'Gehen', en: 'Go', ur: 'جائیں'),
+          SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
+          SentenceWord(de: 'über', en: 'over', ur: 'اوپر سے'),
+          SentenceWord(de: 'die', en: 'the', ur: ''),
+          SentenceWord(de: 'Brücke.', en: 'bridge.', ur: 'پل۔'),
+        ],
+      ),
     ],
   ),
-
   // =============================================
   // TOPIC 10 — HEALTH
   // =============================================
