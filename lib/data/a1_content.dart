@@ -1070,9 +1070,24 @@ const List<A1Topic> a1Topics = [
     words: [
       GermanWord(german: 'das Hotel', english: 'the Hotel', urdu: 'ہوٹل', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏨'),
       GermanWord(german: 'das Zimmer', english: 'the Room', urdu: 'کمرہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🛏️'),
+      GermanWord(german: 'das Einzelzimmer', english: 'the Single Room', urdu: 'سنگل کمرہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🛏️'),
+      GermanWord(german: 'das Doppelzimmer', english: 'the Double Room', urdu: 'ڈبل کمرہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🛏️🛏️'),
       GermanWord(german: 'die Rezeption', english: 'the Reception', urdu: 'استقبالیہ', article: 'die', gender: 'feminine — مؤنث', emoji: '🛎️'),
       GermanWord(german: 'der Schlüssel', english: 'the Key', urdu: 'چابی', article: 'der', gender: 'masculine — مذکر', emoji: '🔑'),
       GermanWord(german: 'die Nacht', english: 'the Night', urdu: 'رات', article: 'die', gender: 'feminine — مؤنث', emoji: '🌙'),
+      GermanWord(german: 'das Frühstück', english: 'the Breakfast', urdu: 'ناشتہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🍳'),
+      GermanWord(german: 'der Aufzug', english: 'the Elevator', urdu: 'لفٹ', article: 'der', gender: 'masculine — مذکر', emoji: '🛗'),
+      GermanWord(german: 'die Etage', english: 'the Floor', urdu: 'منزل', article: 'die', gender: 'feminine — مؤنث', emoji: '🏢'),
+      GermanWord(german: 'das Bad', english: 'the Bathroom', urdu: 'باتھ روم', article: 'das', gender: 'neutral — غیرجنس', emoji: '🚿'),
+      GermanWord(german: 'das Handtuch', english: 'the Towel', urdu: 'تولیہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏨'),
+      GermanWord(german: 'die Reservierung', english: 'the Reservation', urdu: 'بکنگ', article: 'die', gender: 'feminine — مؤنث', emoji: '📋'),
+      GermanWord(german: 'der Preis', english: 'the Price', urdu: 'قیمت', article: 'der', gender: 'masculine — مذکر', emoji: '💰'),
+      GermanWord(german: 'inklusive', english: 'inclusive', urdu: 'شامل', emoji: '✅'),
+      GermanWord(german: 'der Parkplatz', english: 'the Parking', urdu: 'پارکنگ', article: 'der', gender: 'masculine — مذکر', emoji: '🅿️'),
+      GermanWord(german: 'das WLAN', english: 'the WiFi', urdu: 'وائی فائی', article: 'das', gender: 'neutral — غیرجنس', emoji: '📶'),
+      GermanWord(german: 'die Anmeldung', english: 'the Check-in', urdu: 'چیک ان', article: 'die', gender: 'feminine — مؤنث', emoji: '✅'),
+      GermanWord(german: 'die Abmeldung', english: 'the Check-out', urdu: 'چیک آؤٹ', article: 'die', gender: 'feminine — مؤنث', emoji: '🚪'),
+      GermanWord(german: 'ruhig', english: 'quiet', urdu: 'پرسکون', emoji: '🤫'),
     ],
     sentences: [
       GermanSentence(
@@ -1093,12 +1108,74 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'Was', en: 'What', ur: 'کیا'),
           SentenceWord(de: 'kostet', en: 'costs', ur: 'کا ہے'),
           SentenceWord(de: 'das', en: 'the', ur: 'یہ'),
-          SentenceWord(de: 'Zimmer?', en: 'room?', ur: 'کمرہ؟'),
+          SentenceWord(de: 'Zimmer', en: 'room', ur: 'کمرہ'),
+          SentenceWord(de: 'pro', en: 'per', ur: 'فی'),
+          SentenceWord(de: 'Nacht?', en: 'night?', ur: 'رات؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📶',
+        grammarNote: '"Gibt es" = Is there = کیا ہے — gibt es = there is/are',
+        words: [
+          SentenceWord(de: 'Gibt', en: 'Is', ur: 'کیا'),
+          SentenceWord(de: 'es', en: 'there', ur: 'یہاں'),
+          SentenceWord(de: 'WLAN', en: 'WiFi', ur: 'وائی فائی'),
+          SentenceWord(de: 'im', en: 'in the', ur: ''),
+          SentenceWord(de: 'Hotel?', en: 'hotel?', ur: 'ہوٹل میں ہے؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🍳',
+        grammarNote: '"Ist das Frühstück inklusive?" = Is breakfast included?',
+        words: [
+          SentenceWord(de: 'Ist', en: 'Is', ur: 'کیا'),
+          SentenceWord(de: 'das', en: 'the', ur: ''),
+          SentenceWord(de: 'Frühstück', en: 'breakfast', ur: 'ناشتہ'),
+          SentenceWord(de: 'inklusive?', en: 'included?', ur: 'شامل ہے؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🔑',
+        grammarNote: '"Hier ist Ihr Schlüssel" = Here is your key = یہ آپ کی چابی ہے',
+        words: [
+          SentenceWord(de: 'Hier', en: 'Here', ur: 'یہ'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'Ihr', en: 'your', ur: 'آپ کی'),
+          SentenceWord(de: 'Schlüssel.', en: 'key.', ur: 'چابی۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🚪',
+        grammarNote: '"Ich möchte auschecken" = I would like to check out = چیک آؤٹ کرنا ہے',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'چاہتا ہوں'),
+          SentenceWord(de: 'auschecken.', en: 'to check out.', ur: 'چیک آؤٹ کرنا۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🛗',
+        grammarNote: '"Wo ist der Aufzug?" = Where is the elevator? = لفٹ کہاں ہے؟',
+        words: [
+          SentenceWord(de: 'Wo', en: 'Where', ur: 'کہاں'),
+          SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Aufzug?', en: 'elevator?', ur: 'لفٹ؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🤫',
+        grammarNote: '"Ich möchte ein ruhiges Zimmer" = I would like a quiet room',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'چاہتا ہوں'),
+          SentenceWord(de: 'ein', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'ruhiges', en: 'quiet', ur: 'پرسکون'),
+          SentenceWord(de: 'Zimmer.', en: 'room.', ur: 'کمرہ۔'),
         ],
       ),
     ],
   ),
-
   // =============================================
   // TOPIC 9 — THE CITY
   // =============================================
