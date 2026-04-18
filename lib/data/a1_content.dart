@@ -808,21 +808,49 @@ const List<A1Topic> a1Topics = [
     urduTitle: 'کھانا اور پینا',
     emoji: '🍽️',
     words: [
+      // Staple Foods
       GermanWord(german: 'das Brot', english: 'the Bread', urdu: 'روٹی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🍞'),
       GermanWord(german: 'der Reis', english: 'the Rice', urdu: 'چاول', article: 'der', gender: 'masculine — مذکر', emoji: '🍚'),
+      GermanWord(german: 'die Nudeln', english: 'the Pasta/Noodles', urdu: 'پاستہ', article: 'die', gender: 'feminine — مؤنث', emoji: '🍝'),
       GermanWord(german: 'das Fleisch', english: 'the Meat', urdu: 'گوشت', article: 'das', gender: 'neutral — غیرجنس', emoji: '🥩'),
+      GermanWord(german: 'das Hähnchen', english: 'the Chicken', urdu: 'مرغی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🍗'),
+      GermanWord(german: 'der Fisch', english: 'the Fish', urdu: 'مچھلی', article: 'der', gender: 'masculine — مذکر', emoji: '🐟'),
+      GermanWord(german: 'das Ei', english: 'the Egg', urdu: 'انڈہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🥚'),
+      GermanWord(german: 'der Käse', english: 'the Cheese', urdu: 'پنیر', article: 'der', gender: 'masculine — مذکر', emoji: '🧀'),
+      GermanWord(german: 'die Butter', english: 'the Butter', urdu: 'مکھن', article: 'die', gender: 'feminine — مؤنث', emoji: '🧈'),
+      // Fruits
       GermanWord(german: 'der Apfel', english: 'the Apple', urdu: 'سیب', article: 'der', gender: 'masculine — مذکر', emoji: '🍎'),
       GermanWord(german: 'die Banane', english: 'the Banana', urdu: 'کیلا', article: 'die', gender: 'feminine — مؤنث', emoji: '🍌'),
+      GermanWord(german: 'die Orange', english: 'the Orange', urdu: 'مالٹا', article: 'die', gender: 'feminine — مؤنث', emoji: '🍊'),
+      GermanWord(german: 'die Traube', english: 'the Grape', urdu: 'انگور', article: 'die', gender: 'feminine — مؤنث', emoji: '🍇'),
+      GermanWord(german: 'die Erdbeere', english: 'the Strawberry', urdu: 'اسٹرابیری', article: 'die', gender: 'feminine — مؤنث', emoji: '🍓'),
+      GermanWord(german: 'die Mango', english: 'the Mango', urdu: 'آم', article: 'die', gender: 'feminine — مؤنث', emoji: '🥭'),
+      // Vegetables
+      GermanWord(german: 'die Kartoffel', english: 'the Potato', urdu: 'آلو', article: 'die', gender: 'feminine — مؤنث', emoji: '🥔'),
+      GermanWord(german: 'die Tomate', english: 'the Tomato', urdu: 'ٹماٹر', article: 'die', gender: 'feminine — مؤنث', emoji: '🍅'),
+      GermanWord(german: 'die Zwiebel', english: 'the Onion', urdu: 'پیاز', article: 'die', gender: 'feminine — مؤنث', emoji: '🧅'),
+      GermanWord(german: 'der Knoblauch', english: 'the Garlic', urdu: 'لہسن', article: 'der', gender: 'masculine — مذکر', emoji: '🧄'),
+      GermanWord(german: 'die Karotte', english: 'the Carrot', urdu: 'گاجر', article: 'die', gender: 'feminine — مؤنث', emoji: '🥕'),
+      GermanWord(german: 'der Salat', english: 'the Salad/Lettuce', urdu: 'سلاد', article: 'der', gender: 'masculine — مذکر', emoji: '🥗'),
+      // Drinks
       GermanWord(german: 'das Wasser', english: 'the Water', urdu: 'پانی', article: 'das', gender: 'neutral — غیرجنس', emoji: '💧'),
       GermanWord(german: 'der Tee', english: 'the Tea', urdu: 'چائے', article: 'der', gender: 'masculine — مذکر', emoji: '🍵'),
       GermanWord(german: 'der Kaffee', english: 'the Coffee', urdu: 'کافی', article: 'der', gender: 'masculine — مذکر', emoji: '☕'),
       GermanWord(german: 'die Milch', english: 'the Milk', urdu: 'دودھ', article: 'die', gender: 'feminine — مؤنث', emoji: '🥛'),
-      GermanWord(german: 'das Ei', english: 'the Egg', urdu: 'انڈہ', article: 'das', gender: 'neutral — غیرجنس', emoji: '🥚'),
+      GermanWord(german: 'der Saft', english: 'the Juice', urdu: 'جوس', article: 'der', gender: 'masculine — مذکر', emoji: '🥤'),
+      GermanWord(german: 'die Limonade', english: 'the Lemonade', urdu: 'لیمونیڈ', article: 'die', gender: 'feminine — مؤنث', emoji: '🍋'),
+      // Restaurant
+      GermanWord(german: 'die Speisekarte', english: 'the Menu', urdu: 'مینو', article: 'die', gender: 'feminine — مؤنث', emoji: '📋'),
+      GermanWord(german: 'der Kellner', english: 'the Waiter', urdu: 'ویٹر', article: 'der', gender: 'masculine — مذکر', emoji: '🧑‍🍳'),
+      GermanWord(german: 'die Rechnung', english: 'the Bill', urdu: 'بل', article: 'die', gender: 'feminine — مؤنث', emoji: '🧾'),
+      GermanWord(german: 'lecker', english: 'delicious', urdu: 'مزیدار', emoji: '😋'),
+      GermanWord(german: 'vegetarisch', english: 'vegetarian', urdu: 'سبزی خور', emoji: '🥗'),
+      GermanWord(german: 'halal', english: 'halal', urdu: 'حلال', emoji: '✅'),
     ],
     sentences: [
       GermanSentence(
         emoji: '🍽️',
-        grammarNote: '"möchte" = would like = چاہتا ہوں — polite request ke liye',
+        grammarNote: '"möchte" = would like = چاہتا ہوں — polite request ke liye use hota hai',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'möchte', en: 'would like', ur: 'چاہتا ہوں'),
@@ -833,7 +861,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '🍎',
-        grammarNote: '"esse" = eat = کھاتا ہوں — Akkusativ mein der → einen',
+        grammarNote: '"esse" = eat = کھاتا ہوں — Akkusativ: der Apfel → einen Apfel',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'esse', en: 'eat', ur: 'کھاتا ہوں'),
@@ -843,11 +871,74 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '💧',
-        grammarNote: '"trinke" = drink = پیتا ہوں — Wasser das hai tو ein use hoga',
+        grammarNote: '"trinke" = drink = پیتا ہوں — Wasser das hai isliye kein article',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'trinke', en: 'drink', ur: 'پیتا ہوں'),
           SentenceWord(de: 'Wasser.', en: 'water.', ur: 'پانی۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📋',
+        grammarNote: '"Die Speisekarte, bitte!" = The menu, please! = مینو دیں براہ کرم',
+        words: [
+          SentenceWord(de: 'Die', en: 'The', ur: ''),
+          SentenceWord(de: 'Speisekarte,', en: 'menu,', ur: 'مینو،'),
+          SentenceWord(de: 'bitte!', en: 'please!', ur: 'براہ کرم!'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🧾',
+        grammarNote: '"Die Rechnung, bitte!" = The bill, please! = بل لائیں براہ کرم',
+        words: [
+          SentenceWord(de: 'Die', en: 'The', ur: ''),
+          SentenceWord(de: 'Rechnung,', en: 'bill,', ur: 'بل،'),
+          SentenceWord(de: 'bitte!', en: 'please!', ur: 'براہ کرم!'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '😋',
+        grammarNote: '"Das schmeckt lecker!" = That tastes delicious! = یہ مزیدار ہے!',
+        words: [
+          SentenceWord(de: 'Das', en: 'That', ur: 'یہ'),
+          SentenceWord(de: 'schmeckt', en: 'tastes', ur: 'لگتا ہے'),
+          SentenceWord(de: 'sehr', en: 'very', ur: 'بہت'),
+          SentenceWord(de: 'lecker!', en: 'delicious!', ur: 'مزیدار!'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '✅',
+        grammarNote: '"Ist das halal?" = Is that halal? = کیا یہ حلال ہے؟',
+        words: [
+          SentenceWord(de: 'Ist', en: 'Is', ur: 'کیا'),
+          SentenceWord(de: 'das', en: 'that', ur: 'یہ'),
+          SentenceWord(de: 'halal?', en: 'halal?', ur: 'حلال ہے؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🥗',
+        grammarNote: '"Ich bin Vegetarier" = I am vegetarian = میں سبزی خور ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
+          SentenceWord(de: 'Vegetarier.', en: 'vegetarian.', ur: 'سبزی خور۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❓',
+        grammarNote: '"Was empfehlen Sie?" = What do you recommend? = آپ کیا تجویز کرتے ہیں؟',
+        words: [
+          SentenceWord(de: 'Was', en: 'What', ur: 'کیا'),
+          SentenceWord(de: 'empfehlen', en: 'recommend', ur: 'تجویز کرتے ہیں'),
+          SentenceWord(de: 'Sie?', en: 'you?', ur: 'آپ؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🍽️',
+        grammarNote: '"Guten Appetit!" = Enjoy your meal! = بسم اللہ / نوش فرمائیں',
+        words: [
+          SentenceWord(de: 'Guten', en: 'Good', ur: 'اچھی'),
+          SentenceWord(de: 'Appetit!', en: 'appetite!', ur: 'بھوک!'),
         ],
       ),
     ],
