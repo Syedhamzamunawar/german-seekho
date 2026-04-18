@@ -958,6 +958,20 @@ const List<A1Topic> a1Topics = [
       GermanWord(german: 'das Lesen', english: 'the Reading', urdu: 'پڑھنا', article: 'das', gender: 'neutral — غیرجنس', emoji: '📚'),
       GermanWord(german: 'das Reisen', english: 'the Traveling', urdu: 'سفر', article: 'das', gender: 'neutral — غیرجنس', emoji: '✈️'),
       GermanWord(german: 'das Kochen', english: 'the Cooking', urdu: 'کھانا پکانا', article: 'das', gender: 'neutral — غیرجنس', emoji: '👨‍🍳'),
+      GermanWord(german: 'das Schwimmen', english: 'the Swimming', urdu: 'تیراکی', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏊'),
+      GermanWord(german: 'das Laufen', english: 'the Running', urdu: 'دوڑنا', article: 'das', gender: 'neutral — غیرجنس', emoji: '🏃'),
+      GermanWord(german: 'das Tanzen', english: 'the Dancing', urdu: 'ناچنا', article: 'das', gender: 'neutral — غیرجنس', emoji: '💃'),
+      GermanWord(german: 'das Malen', english: 'the Painting', urdu: 'مصوری', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎨'),
+      GermanWord(german: 'das Fotografieren', english: 'the Photography', urdu: 'فوٹوگرافی', article: 'das', gender: 'neutral — غیرجنس', emoji: '📷'),
+      GermanWord(german: 'das Spielen', english: 'the Playing', urdu: 'کھیلنا', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎮'),
+      GermanWord(german: 'der Fußball', english: 'the Football', urdu: 'فٹبال', article: 'der', gender: 'masculine — مذکر', emoji: '⚽'),
+      GermanWord(german: 'das Tennis', english: 'the Tennis', urdu: 'ٹینس', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎾'),
+      GermanWord(german: 'das Kino', english: 'the Cinema', urdu: 'سینما', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎬'),
+      GermanWord(german: 'das Theater', english: 'the Theater', urdu: 'تھیٹر', article: 'das', gender: 'neutral — غیرجنس', emoji: '🎭'),
+      GermanWord(german: 'die Bibliothek', english: 'the Library', urdu: 'لائبریری', article: 'die', gender: 'feminine — مؤنث', emoji: '📚'),
+      GermanWord(german: 'der Spaziergang', english: 'the Walk', urdu: 'سیر', article: 'der', gender: 'masculine — مذکر', emoji: '🚶'),
+      GermanWord(german: 'gerne', english: 'gladly/like to', urdu: 'خوشی سے', emoji: '😊'),
+      GermanWord(german: 'lieber', english: 'rather/prefer', urdu: 'زیادہ پسند', emoji: '❤️'),
     ],
     sentences: [
       GermanSentence(
@@ -972,7 +986,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '⚽',
-        grammarNote: '"spiele" = play = کھیلتا ہوں — Sport masculine hai',
+        grammarNote: '"spiele gerne" = like to play = خوشی سے کھیلتا ہوں — gerne = gladly',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'spiele', en: 'play', ur: 'کھیلتا ہوں'),
@@ -980,9 +994,72 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'Fußball.', en: 'football.', ur: 'فٹبال۔'),
         ],
       ),
+      GermanSentence(
+        emoji: '🎵',
+        grammarNote: '"höre Musik" = listen to music = موسیقی سنتا ہوں — hören = to listen',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'höre', en: 'listen to', ur: 'سنتا ہوں'),
+          SentenceWord(de: 'gerne', en: 'gladly', ur: 'خوشی سے'),
+          SentenceWord(de: 'Musik.', en: 'music.', ur: 'موسیقی۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🎬',
+        grammarNote: '"gehe ins Kino" = go to cinema = سینما جاتا ہوں — ins = in + das',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'gehe', en: 'go', ur: 'جاتا ہوں'),
+          SentenceWord(de: 'ins', en: 'to the', ur: ''),
+          SentenceWord(de: 'Kino.', en: 'cinema.', ur: 'سینما۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🏊',
+        grammarNote: '"schwimme" = swim = تیرتا ہوں — schwimmen verb',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'schwimme', en: 'swim', ur: 'تیرتا ہوں'),
+          SentenceWord(de: 'gerne', en: 'gladly', ur: 'خوشی سے'),
+          SentenceWord(de: 'im', en: 'in the', ur: ''),
+          SentenceWord(de: 'Sommer.', en: 'summer.', ur: 'گرمیوں میں۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❓',
+        grammarNote: '"Was machst du in der Freizeit?" = What do you do in free time?',
+        words: [
+          SentenceWord(de: 'Was', en: 'What', ur: 'کیا'),
+          SentenceWord(de: 'machst', en: 'do', ur: 'کرتے ہو'),
+          SentenceWord(de: 'du', en: 'you', ur: 'تم'),
+          SentenceWord(de: 'in', en: 'in', ur: 'میں'),
+          SentenceWord(de: 'der', en: 'the', ur: ''),
+          SentenceWord(de: 'Freizeit?', en: 'free time?', ur: 'فارغ وقت؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🚶',
+        grammarNote: '"mache einen Spaziergang" = take a walk = سیر کرتا ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'mache', en: 'take', ur: 'کرتا ہوں'),
+          SentenceWord(de: 'einen', en: 'a', ur: 'ایک'),
+          SentenceWord(de: 'Spaziergang.', en: 'walk.', ur: 'سیر۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❤️',
+        grammarNote: '"lieber" = prefer = زیادہ پسند — lieber + verb = prefer to do',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'lese', en: 'read', ur: 'پڑھتا ہوں'),
+          SentenceWord(de: 'lieber', en: 'rather', ur: 'زیادہ'),
+          SentenceWord(de: 'als', en: 'than', ur: 'سے'),
+          SentenceWord(de: 'fernsehen.', en: 'watching TV.', ur: 'ٹی وی دیکھنا۔'),
+        ],
+      ),
     ],
   ),
-
   // =============================================
   // TOPIC 8 — AT THE HOTEL
   // =============================================
