@@ -3516,12 +3516,12 @@ const List<A1Topic> a1Topics = [
       ),
     ],
   ),
-  // =============================================
-  // TOPIC 16 — GRAMMAR — PERSONAL PRONOUNS & VERBS
+  /// =============================================
+  // TOPIC 16 — GRAMMAR — PRONOUNS, VERBS & MODAL VERBS
   // =============================================
   A1Topic(
     title: 'Grammar — Pronouns & Verbs',
-    urduTitle: 'گرامر — ضمائر اور فعل',
+    urduTitle: 'گرامر — ضمائر، فعل اور Modal Verbs',
     emoji: '📝',
     words: [
       // Personal Pronouns
@@ -3534,33 +3534,38 @@ const List<A1Topic> a1Topics = [
       GermanWord(german: 'ihr', english: 'you all (informal)', urdu: 'تم سب', emoji: '👥'),
       GermanWord(german: 'sie', english: 'they', urdu: 'وہ سب', emoji: '👨‍👩‍👧‍👦'),
       GermanWord(german: 'Sie', english: 'you (formal)', urdu: 'آپ', emoji: '🎩'),
-      // Verb sein (to be)
-      GermanWord(german: 'sein', english: 'to be', urdu: 'ہونا', emoji: '✅'),
+      // Verb sein
       GermanWord(german: 'ich bin', english: 'I am', urdu: 'میں ہوں', emoji: '👤'),
       GermanWord(german: 'du bist', english: 'you are', urdu: 'تم ہو', emoji: '👥'),
       GermanWord(german: 'er/sie/es ist', english: 'he/she/it is', urdu: 'وہ ہے', emoji: '👤'),
       GermanWord(german: 'wir sind', english: 'we are', urdu: 'ہم ہیں', emoji: '👨‍👩‍👧'),
       GermanWord(german: 'ihr seid', english: 'you all are', urdu: 'تم سب ہو', emoji: '👥'),
       GermanWord(german: 'sie/Sie sind', english: 'they/you are', urdu: 'وہ/آپ ہیں', emoji: '👨‍👩‍👧‍👦'),
-      // Verb haben (to have)
-      GermanWord(german: 'haben', english: 'to have', urdu: 'ہونا/رکھنا', emoji: '✋'),
+      // Verb haben
       GermanWord(german: 'ich habe', english: 'I have', urdu: 'میرے پاس ہے', emoji: '👤'),
       GermanWord(german: 'du hast', english: 'you have', urdu: 'تمہارے پاس ہے', emoji: '👥'),
       GermanWord(german: 'er/sie/es hat', english: 'he/she/it has', urdu: 'اس کے پاس ہے', emoji: '👤'),
       GermanWord(german: 'wir haben', english: 'we have', urdu: 'ہمارے پاس ہے', emoji: '👨‍👩‍👧'),
       GermanWord(german: 'sie/Sie haben', english: 'they/you have', urdu: 'ان کے پاس ہے', emoji: '👨‍👩‍👧‍👦'),
+      // Modal Verbs
+      GermanWord(german: 'müssen', english: 'must/have to', urdu: 'لازمی ہے', emoji: '⚠️'),
+      GermanWord(german: 'können', english: 'can/be able to', urdu: 'کر سکنا', emoji: '💪'),
+      GermanWord(german: 'wollen', english: 'want to', urdu: 'چاہنا (مضبوط)', emoji: '❤️'),
+      GermanWord(german: 'sollen', english: 'should/supposed to', urdu: 'چاہیے', emoji: '📋'),
+      GermanWord(german: 'dürfen', english: 'may/allowed to', urdu: 'اجازت ہونا', emoji: '✅'),
+      GermanWord(german: 'möchten', english: 'would like to', urdu: 'چاہتا ہوں (شائستہ)', emoji: '🙏'),
       // Negation
       GermanWord(german: 'nicht', english: 'not', urdu: 'نہیں', emoji: '❌'),
-      GermanWord(german: 'kein', english: 'no/not a (masculine)', urdu: 'کوئی نہیں (مذکر)', emoji: '🚫'),
-      GermanWord(german: 'keine', english: 'no/not a (feminine)', urdu: 'کوئی نہیں (مؤنث)', emoji: '🚫'),
-      GermanWord(german: 'kein', english: 'no/not a (neutral)', urdu: 'کوئی نہیں (غیرجنس)', emoji: '🚫'),
+      GermanWord(german: 'kein/keine', english: 'no/not a', urdu: 'کوئی نہیں', emoji: '🚫'),
       GermanWord(german: 'nie', english: 'never', urdu: 'کبھی نہیں', emoji: '❌'),
       GermanWord(german: 'niemand', english: 'nobody', urdu: 'کوئی نہیں', emoji: '👻'),
       GermanWord(german: 'nichts', english: 'nothing', urdu: 'کچھ نہیں', emoji: '🚫'),
-      // Question words
+      // W-Questions
       GermanWord(german: 'wer', english: 'who', urdu: 'کون', emoji: '❓'),
       GermanWord(german: 'was', english: 'what', urdu: 'کیا', emoji: '❓'),
       GermanWord(german: 'wo', english: 'where', urdu: 'کہاں', emoji: '📍'),
+      GermanWord(german: 'woher', english: 'where from', urdu: 'کہاں سے', emoji: '🌍'),
+      GermanWord(german: 'wohin', english: 'where to', urdu: 'کہاں کی طرف', emoji: '➡️'),
       GermanWord(german: 'wann', english: 'when', urdu: 'کب', emoji: '⏰'),
       GermanWord(german: 'warum', english: 'why', urdu: 'کیوں', emoji: '🤔'),
       GermanWord(german: 'wie', english: 'how', urdu: 'کیسے', emoji: '🤔'),
@@ -3569,29 +3574,12 @@ const List<A1Topic> a1Topics = [
       GermanWord(german: 'welcher', english: 'which (masculine)', urdu: 'کون سا (مذکر)', emoji: '❓'),
       GermanWord(german: 'welche', english: 'which (feminine)', urdu: 'کون سی (مؤنث)', emoji: '❓'),
       GermanWord(german: 'welches', english: 'which (neutral)', urdu: 'کون سا (غیرجنس)', emoji: '❓'),
-      GermanWord(german: 'woher', english: 'where from', urdu: 'کہاں سے', emoji: '🌍'),
-      GermanWord(german: 'wohin', english: 'where to', urdu: 'کہاں کی طرف', emoji: '➡️'),
-      // Common verbs
-      GermanWord(german: 'machen', english: 'to do/make', urdu: 'کرنا/بنانا', emoji: '✅'),
-      GermanWord(german: 'gehen', english: 'to go', urdu: 'جانا', emoji: '🚶'),
-      GermanWord(german: 'kommen', english: 'to come', urdu: 'آنا', emoji: '🚶'),
-      GermanWord(german: 'sehen', english: 'to see', urdu: 'دیکھنا', emoji: '👁️'),
-      GermanWord(german: 'hören', english: 'to hear/listen', urdu: 'سننا', emoji: '👂'),
-      GermanWord(german: 'sprechen', english: 'to speak', urdu: 'بولنا', emoji: '🗣️'),
-      GermanWord(german: 'verstehen', english: 'to understand', urdu: 'سمجھنا', emoji: '🧠'),
-      GermanWord(german: 'wissen', english: 'to know', urdu: 'جاننا', emoji: '💡'),
-      GermanWord(german: 'möchten', english: 'would like to', urdu: 'چاہنا', emoji: '❤️'),
-      GermanWord(german: 'müssen', english: 'must/have to', urdu: 'لازمی/ضروری', emoji: '⚠️'),
-      GermanWord(german: 'können', english: 'can/be able to', urdu: 'کر سکنا', emoji: '💪'),
-      GermanWord(german: 'dürfen', english: 'may/allowed to', urdu: 'اجازت ہونا', emoji: '✅'),
-      GermanWord(german: 'sollen', english: 'should/supposed to', urdu: 'چاہیے', emoji: '📋'),
-      GermanWord(german: 'wollen', english: 'want to', urdu: 'چاہنا', emoji: '❤️'),
     ],
     sentences: [
-      // Pronouns practice
+      // ===== SEIN VERB =====
       GermanSentence(
         emoji: '👤',
-        grammarNote: '"Ich bin" = I am = میں ہوں — sein verb ka pehla form',
+        grammarNote: '⭐ SEIN = to be — ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
           SentenceWord(de: 'bin', en: 'am', ur: 'ہوں'),
@@ -3600,7 +3588,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '👥',
-        grammarNote: '"Du bist" = You are = تم ہو — du informal singular',
+        grammarNote: 'SEIN: du bist = تم ہو — informal singular',
         words: [
           SentenceWord(de: 'Du', en: 'You', ur: 'تم'),
           SentenceWord(de: 'bist', en: 'are', ur: 'ہو'),
@@ -3610,47 +3598,46 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '👨',
-        grammarNote: '"Er ist" = He is = وہ ہے — er masculine pronoun',
+        grammarNote: 'SEIN: er ist = وہ ہے — masculine singular',
         words: [
           SentenceWord(de: 'Er', en: 'He', ur: 'وہ'),
           SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
-          SentenceWord(de: 'mein', en: 'my', ur: 'میرا'),
-          SentenceWord(de: 'Bruder.', en: 'brother.', ur: 'بھائی۔'),
+          SentenceWord(de: 'Arzt.', en: 'a doctor.', ur: 'ڈاکٹر۔'),
         ],
       ),
       GermanSentence(
         emoji: '👩',
-        grammarNote: '"Sie ist" = She is = وہ ہے — sie feminine pronoun',
+        grammarNote: 'SEIN: sie ist = وہ ہے — feminine singular',
         words: [
           SentenceWord(de: 'Sie', en: 'She', ur: 'وہ'),
           SentenceWord(de: 'ist', en: 'is', ur: 'ہے'),
-          SentenceWord(de: 'meine', en: 'my', ur: 'میری'),
-          SentenceWord(de: 'Schwester.', en: 'sister.', ur: 'بہن۔'),
+          SentenceWord(de: 'Lehrerin.', en: 'a teacher.', ur: 'استانی۔'),
         ],
       ),
       GermanSentence(
         emoji: '👨‍👩‍👧',
-        grammarNote: '"Wir sind" = We are = ہم ہیں — wir plural',
+        grammarNote: 'SEIN: wir sind = ہم ہیں — plural',
         words: [
           SentenceWord(de: 'Wir', en: 'We', ur: 'ہم'),
           SentenceWord(de: 'sind', en: 'are', ur: 'ہیں'),
-          SentenceWord(de: 'Freunde.', en: 'friends.', ur: 'دوست۔'),
+          SentenceWord(de: 'aus', en: 'from', ur: 'سے'),
+          SentenceWord(de: 'Pakistan.', en: 'Pakistan.', ur: 'پاکستان۔'),
         ],
       ),
       GermanSentence(
         emoji: '🎩',
-        grammarNote: '"Sie sind" formal = You are (formal) = آپ ہیں — Sie capital S = formal',
+        grammarNote: 'SEIN: Sie sind = آپ ہیں — formal, capital S',
         words: [
           SentenceWord(de: 'Sie', en: 'You', ur: 'آپ'),
           SentenceWord(de: 'sind', en: 'are', ur: 'ہیں'),
           SentenceWord(de: 'sehr', en: 'very', ur: 'بہت'),
-          SentenceWord(de: 'nett.', en: 'nice.', ur: 'اچھے۔'),
+          SentenceWord(de: 'nett.', en: 'kind.', ur: 'مہربان۔'),
         ],
       ),
-      // haben practice
+      // ===== HABEN VERB =====
       GermanSentence(
         emoji: '👤',
-        grammarNote: '"Ich habe" = I have = میرے پاس ہے — haben verb',
+        grammarNote: '⭐ HABEN = to have — ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میرے پاس'),
           SentenceWord(de: 'habe', en: 'have', ur: 'ہے'),
@@ -3660,7 +3647,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '👥',
-        grammarNote: '"Du hast" = You have = تمہارے پاس ہے',
+        grammarNote: 'HABEN: du hast = تمہارے پاس ہے',
         words: [
           SentenceWord(de: 'Du', en: 'You', ur: 'تمہارے پاس'),
           SentenceWord(de: 'hast', en: 'have', ur: 'ہے'),
@@ -3670,7 +3657,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '👨',
-        grammarNote: '"Er hat" = He has = اس کے پاس ہے',
+        grammarNote: 'HABEN: er hat = اس کے پاس ہے',
         words: [
           SentenceWord(de: 'Er', en: 'He', ur: 'اس کے پاس'),
           SentenceWord(de: 'hat', en: 'has', ur: 'ہے'),
@@ -3680,7 +3667,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '👨‍👩‍👧',
-        grammarNote: '"Wir haben" = We have = ہمارے پاس ہے',
+        grammarNote: 'HABEN: wir haben = ہمارے پاس ہے',
         words: [
           SentenceWord(de: 'Wir', en: 'We', ur: 'ہمارے پاس'),
           SentenceWord(de: 'haben', en: 'have', ur: 'ہے'),
@@ -3688,80 +3675,319 @@ const List<A1Topic> a1Topics = [
           SentenceWord(de: 'Problem.', en: 'problem.', ur: 'مسئلہ۔'),
         ],
       ),
-      // Negation
+      // ===== MODAL VERB 1: MÜSSEN =====
+      GermanSentence(
+        emoji: '⚠️',
+        grammarNote: '⭐ MÜSSEN = must/have to = لازمی ہے — Structure: Subject + muss + ... + Infinitive (END)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'muss', en: 'must', ur: 'لازمی'),
+          SentenceWord(de: 'jetzt', en: 'now', ur: 'ابھی'),
+          SentenceWord(de: 'gehen.', en: 'go.', ur: 'جانا ہے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '⚠️',
+        grammarNote: 'MÜSSEN: Du musst lernen = تمہیں پڑھنا لازمی ہے',
+        words: [
+          SentenceWord(de: 'Du', en: 'You', ur: 'تمہیں'),
+          SentenceWord(de: 'musst', en: 'must', ur: 'لازمی'),
+          SentenceWord(de: 'mehr', en: 'more', ur: 'زیادہ'),
+          SentenceWord(de: 'lernen.', en: 'study.', ur: 'پڑھنا ہے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '⚠️',
+        grammarNote: 'MÜSSEN: Er muss arbeiten = اسے کام کرنا لازمی ہے',
+        words: [
+          SentenceWord(de: 'Er', en: 'He', ur: 'اسے'),
+          SentenceWord(de: 'muss', en: 'must', ur: 'لازمی'),
+          SentenceWord(de: 'heute', en: 'today', ur: 'آج'),
+          SentenceWord(de: 'arbeiten.', en: 'work.', ur: 'کام کرنا ہے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '⚠️',
+        grammarNote: 'MÜSSEN: Wir müssen pünktlich sein = ہمیں وقت پر ہونا لازمی ہے',
+        words: [
+          SentenceWord(de: 'Wir', en: 'We', ur: 'ہمیں'),
+          SentenceWord(de: 'müssen', en: 'must', ur: 'لازمی'),
+          SentenceWord(de: 'pünktlich', en: 'on time', ur: 'وقت پر'),
+          SentenceWord(de: 'sein.', en: 'be.', ur: 'ہونا ہے۔'),
+        ],
+      ),
+      // ===== MODAL VERB 2: KÖNNEN =====
+      GermanSentence(
+        emoji: '💪',
+        grammarNote: '⭐ KÖNNEN = can/be able to = کر سکنا — Structure: Subject + kann + ... + Infinitive (END)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'kann', en: 'can', ur: 'جرمن'),
+          SentenceWord(de: 'Deutsch', en: 'German', ur: 'بول'),
+          SentenceWord(de: 'sprechen.', en: 'speak.', ur: 'سکتا ہوں۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💪',
+        grammarNote: 'KÖNNEN: Du kannst schwimmen = تم تیر سکتے ہو',
+        words: [
+          SentenceWord(de: 'Du', en: 'You', ur: 'تم'),
+          SentenceWord(de: 'kannst', en: 'can', ur: 'تیر'),
+          SentenceWord(de: 'gut', en: 'well', ur: 'اچھا'),
+          SentenceWord(de: 'schwimmen.', en: 'swim.', ur: 'سکتے ہو۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💪',
+        grammarNote: 'KÖNNEN: Er kann kochen = وہ کھانا پکا سکتا ہے',
+        words: [
+          SentenceWord(de: 'Er', en: 'He', ur: 'وہ'),
+          SentenceWord(de: 'kann', en: 'can', ur: 'کھانا'),
+          SentenceWord(de: 'gut', en: 'well', ur: 'اچھا'),
+          SentenceWord(de: 'kochen.', en: 'cook.', ur: 'پکا سکتا ہے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '💪',
+        grammarNote: 'KÖNNEN: Können Sie mir helfen? = کیا آپ میری مدد کر سکتے ہیں؟',
+        words: [
+          SentenceWord(de: 'Können', en: 'Can', ur: 'کیا'),
+          SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
+          SentenceWord(de: 'mir', en: 'me', ur: 'میری'),
+          SentenceWord(de: 'helfen?', en: 'help?', ur: 'مدد کر سکتے ہیں؟'),
+        ],
+      ),
+      // ===== MODAL VERB 3: WOLLEN =====
+      GermanSentence(
+        emoji: '❤️',
+        grammarNote: '⭐ WOLLEN = want to = چاہنا (strong) — Structure: Subject + will + ... + Infinitive (END)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'will', en: 'want to', ur: 'پاکستان'),
+          SentenceWord(de: 'nach', en: 'to', ur: 'جانا'),
+          SentenceWord(de: 'Pakistan', en: 'Pakistan', ur: 'چاہتا'),
+          SentenceWord(de: 'fahren.', en: 'travel.', ur: 'ہوں۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❤️',
+        grammarNote: 'WOLLEN: Du willst schlafen = تم سونا چاہتے ہو',
+        words: [
+          SentenceWord(de: 'Du', en: 'You', ur: 'تم'),
+          SentenceWord(de: 'willst', en: 'want to', ur: 'سونا'),
+          SentenceWord(de: 'schlafen,', en: 'sleep,', ur: 'چاہتے ہو،'),
+          SentenceWord(de: 'oder?', en: 'right?', ur: 'ہے ناں؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❤️',
+        grammarNote: 'WOLLEN: Er will Arzt werden = وہ ڈاکٹر بننا چاہتا ہے',
+        words: [
+          SentenceWord(de: 'Er', en: 'He', ur: 'وہ'),
+          SentenceWord(de: 'will', en: 'wants to', ur: 'ڈاکٹر'),
+          SentenceWord(de: 'Arzt', en: 'doctor', ur: 'بننا'),
+          SentenceWord(de: 'werden.', en: 'become.', ur: 'چاہتا ہے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❤️',
+        grammarNote: 'WOLLEN: Wir wollen Deutsch lernen = ہم جرمن سیکھنا چاہتے ہیں',
+        words: [
+          SentenceWord(de: 'Wir', en: 'We', ur: 'ہم'),
+          SentenceWord(de: 'wollen', en: 'want to', ur: 'جرمن'),
+          SentenceWord(de: 'Deutsch', en: 'German', ur: 'سیکھنا'),
+          SentenceWord(de: 'lernen.', en: 'learn.', ur: 'چاہتے ہیں۔'),
+        ],
+      ),
+      // ===== MODAL VERB 4: SOLLEN =====
+      GermanSentence(
+        emoji: '📋',
+        grammarNote: '⭐ SOLLEN = should/supposed to = چاہیے — koi aur keh raha hai! Structure: Subject + soll + ... + Infinitive',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'soll', en: 'should', ur: 'زیادہ'),
+          SentenceWord(de: 'mehr', en: 'more', ur: 'پانی'),
+          SentenceWord(de: 'Wasser', en: 'water', ur: 'پینا'),
+          SentenceWord(de: 'trinken.', en: 'drink.', ur: 'چاہیے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📋',
+        grammarNote: 'SOLLEN: Du sollst pünktlich kommen = تمہیں وقت پر آنا چاہیے',
+        words: [
+          SentenceWord(de: 'Du', en: 'You', ur: 'تمہیں'),
+          SentenceWord(de: 'sollst', en: 'should', ur: 'وقت پر'),
+          SentenceWord(de: 'pünktlich', en: 'on time', ur: 'آنا'),
+          SentenceWord(de: 'kommen.', en: 'come.', ur: 'چاہیے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📋',
+        grammarNote: 'SOLLEN: Er soll mehr schlafen = اسے زیادہ سونا چاہیے — doctor ne kaha',
+        words: [
+          SentenceWord(de: 'Er', en: 'He', ur: 'اسے'),
+          SentenceWord(de: 'soll', en: 'should', ur: 'زیادہ'),
+          SentenceWord(de: 'mehr', en: 'more', ur: 'سونا'),
+          SentenceWord(de: 'schlafen.', en: 'sleep.', ur: 'چاہیے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '📋',
+        grammarNote: 'SOLLEN: Was soll ich tun? = مجھے کیا کرنا چاہیے؟',
+        words: [
+          SentenceWord(de: 'Was', en: 'What', ur: 'مجھے'),
+          SentenceWord(de: 'soll', en: 'should', ur: 'کیا'),
+          SentenceWord(de: 'ich', en: 'I', ur: 'کرنا'),
+          SentenceWord(de: 'tun?', en: 'do?', ur: 'چاہیے؟'),
+        ],
+      ),
+      // ===== MODAL VERB 5: DÜRFEN =====
+      GermanSentence(
+        emoji: '✅',
+        grammarNote: '⭐ DÜRFEN = may/allowed to = اجازت ہے — Structure: Subject + darf + ... + Infinitive',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'darf', en: 'am allowed', ur: 'یہاں'),
+          SentenceWord(de: 'hier', en: 'here', ur: 'پارک کرنے'),
+          SentenceWord(de: 'parken.', en: 'park.', ur: 'کی اجازت ہے۔'),
+        ],
+      ),
       GermanSentence(
         emoji: '❌',
-        grammarNote: '"nicht" = not = نہیں — verb ke baad aata hai',
+        grammarNote: 'DÜRFEN + nicht = not allowed = اجازت نہیں — Du darfst nicht rauchen',
         words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'bin', en: 'am', ur: 'نہیں'),
-          SentenceWord(de: 'nicht', en: 'not', ur: 'ہوں'),
-          SentenceWord(de: 'müde.', en: 'tired.', ur: 'تھکا۔'),
+          SentenceWord(de: 'Du', en: 'You', ur: 'تمہیں'),
+          SentenceWord(de: 'darfst', en: 'are allowed', ur: 'یہاں'),
+          SentenceWord(de: 'hier', en: 'here', ur: 'سگریٹ'),
+          SentenceWord(de: 'nicht', en: 'not', ur: 'پینے'),
+          SentenceWord(de: 'rauchen.', en: 'smoke.', ur: 'کی اجازت نہیں۔'),
         ],
       ),
       GermanSentence(
-        emoji: '🚫',
-        grammarNote: '"kein" = no/not a — masculine nouns ke saath kein',
+        emoji: '✅',
+        grammarNote: 'DÜRFEN: Darf ich hereinkommen? = کیا میں اندر آ سکتا ہوں؟',
         words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میرے پاس'),
-          SentenceWord(de: 'habe', en: 'have', ur: 'نہیں ہے'),
-          SentenceWord(de: 'keinen', en: 'no', ur: 'کوئی'),
-          SentenceWord(de: 'Hunger.', en: 'hunger.', ur: 'بھوک۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '🚫',
-        grammarNote: '"keine" = no/not a — feminine nouns ke saath keine',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میرے پاس'),
-          SentenceWord(de: 'habe', en: 'have', ur: 'نہیں ہے'),
-          SentenceWord(de: 'keine', en: 'no', ur: 'کوئی'),
-          SentenceWord(de: 'Zeit.', en: 'time.', ur: 'وقت۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '🚫',
-        grammarNote: '"kein" = no/not a — neutral nouns ke saath kein',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میرے پاس'),
-          SentenceWord(de: 'habe', en: 'have', ur: 'نہیں ہے'),
-          SentenceWord(de: 'kein', en: 'no', ur: 'کوئی'),
-          SentenceWord(de: 'Geld.', en: 'money.', ur: 'پیسہ۔'),
+          SentenceWord(de: 'Darf', en: 'May', ur: 'کیا'),
+          SentenceWord(de: 'ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'hereinkommen?', en: 'come in?', ur: 'اندر آ سکتا ہوں؟'),
         ],
       ),
       GermanSentence(
         emoji: '❌',
-        grammarNote: '"nie" = never = کبھی نہیں — strong negation',
+        grammarNote: 'DÜRFEN: Hier darf man nicht fotografieren = یہاں تصویر نہیں لے سکتے',
+        words: [
+          SentenceWord(de: 'Hier', en: 'Here', ur: 'یہاں'),
+          SentenceWord(de: 'darf', en: 'is allowed', ur: 'تصویر'),
+          SentenceWord(de: 'man', en: 'one', ur: 'لینے'),
+          SentenceWord(de: 'nicht', en: 'not', ur: 'کی'),
+          SentenceWord(de: 'fotografieren.', en: 'photograph.', ur: 'اجازت نہیں۔'),
+        ],
+      ),
+      // ===== MODAL VERB 6: MÖCHTEN =====
+      GermanSentence(
+        emoji: '🙏',
+        grammarNote: '⭐ MÖCHTEN = would like to = چاہتا ہوں (polite) — wollen se zyada shaaistah! Structure: Subject + möchte + ... + Infinitive',
         words: [
           SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'trinke', en: 'drink', ur: 'کبھی نہیں'),
-          SentenceWord(de: 'nie', en: 'never', ur: 'پیتا'),
-          SentenceWord(de: 'Alkohol.', en: 'alcohol.', ur: 'شراب۔'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'چائے'),
+          SentenceWord(de: 'Tee', en: 'tea', ur: 'پینا'),
+          SentenceWord(de: 'trinken.', en: 'drink.', ur: 'چاہتا ہوں۔'),
         ],
       ),
       GermanSentence(
-        emoji: '👻',
-        grammarNote: '"niemand" = nobody = کوئی نہیں',
+        emoji: '🙏',
+        grammarNote: 'MÖCHTEN: Du möchtest schlafen = تم سونا چاہتے ہو (politely)',
         words: [
-          SentenceWord(de: 'Niemand', en: 'Nobody', ur: 'کوئی'),
-          SentenceWord(de: 'ist', en: 'is', ur: 'نہیں'),
-          SentenceWord(de: 'zu', en: 'at', ur: ''),
-          SentenceWord(de: 'Hause.', en: 'home.', ur: 'گھر پر۔'),
+          SentenceWord(de: 'Du', en: 'You', ur: 'تم'),
+          SentenceWord(de: 'möchtest', en: 'would like', ur: 'سونا'),
+          SentenceWord(de: 'schlafen,', en: 'sleep,', ur: 'چاہتے ہو،'),
+          SentenceWord(de: 'oder?', en: 'right?', ur: 'ہے ناں؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🙏',
+        grammarNote: 'MÖCHTEN: Er möchte Deutsch lernen = وہ جرمن سیکھنا چاہتا ہے',
+        words: [
+          SentenceWord(de: 'Er', en: 'He', ur: 'وہ'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'جرمن'),
+          SentenceWord(de: 'Deutsch', en: 'German', ur: 'سیکھنا'),
+          SentenceWord(de: 'lernen.', en: 'learn.', ur: 'چاہتا ہے۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🙏',
+        grammarNote: 'MÖCHTEN: Möchten Sie etwas trinken? = کیا آپ کچھ پینا چاہتے ہیں؟',
+        words: [
+          SentenceWord(de: 'Möchten', en: 'Would you like', ur: 'کیا'),
+          SentenceWord(de: 'Sie', en: 'you', ur: 'آپ'),
+          SentenceWord(de: 'etwas', en: 'something', ur: 'کچھ'),
+          SentenceWord(de: 'trinken?', en: 'drink?', ur: 'پینا چاہتے ہیں؟'),
+        ],
+      ),
+      // ===== WOLLEN vs MÖCHTEN =====
+      GermanSentence(
+        emoji: '🔄',
+        grammarNote: '⭐ WOLLEN vs MÖCHTEN — wollen = direct want, möchten = polite want',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'will', en: 'want', ur: 'کافی'),
+          SentenceWord(de: 'Kaffee!', en: 'coffee!', ur: 'چاہتا ہوں! (direct)'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '🔄',
+        grammarNote: 'MÖCHTEN polite: Ich möchte Kaffee, bitte = کافی چاہیے براہ کرم (polite)',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
+          SentenceWord(de: 'möchte', en: 'would like', ur: 'کافی'),
+          SentenceWord(de: 'Kaffee,', en: 'coffee,', ur: 'چاہیے،'),
+          SentenceWord(de: 'bitte.', en: 'please.', ur: 'براہ کرم۔'),
+        ],
+      ),
+      // ===== NEGATION =====
+      GermanSentence(
+        emoji: '❌',
+        grammarNote: '⭐ NICHT: verb ke baad aata hai — Ich trinke nicht = میں نہیں پیتا',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'trinke', en: 'drink', ur: 'نہیں'),
+          SentenceWord(de: 'nicht.', en: 'not.', ur: 'پیتا۔'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '❌',
+        grammarNote: 'NICHT: Ich bin nicht müde = میں تھکا نہیں ہوں',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
+          SentenceWord(de: 'bin', en: 'am', ur: 'تھکا'),
+          SentenceWord(de: 'nicht', en: 'not', ur: 'نہیں'),
+          SentenceWord(de: 'müde.', en: 'tired.', ur: 'ہوں۔'),
         ],
       ),
       GermanSentence(
         emoji: '🚫',
-        grammarNote: '"nichts" = nothing = کچھ نہیں',
+        grammarNote: '⭐ KEIN/KEINE: article ki jagah — der Mann → kein Mann, die Frau → keine Frau, das Kind → kein Kind',
         words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'verstehe', en: 'understand', ur: 'سمجھتا'),
-          SentenceWord(de: 'nichts.', en: 'nothing.', ur: 'کچھ نہیں۔'),
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میرے پاس'),
+          SentenceWord(de: 'habe', en: 'have', ur: 'کوئی'),
+          SentenceWord(de: 'kein', en: 'no', ur: 'گاڑی'),
+          SentenceWord(de: 'Auto.', en: 'car.', ur: 'نہیں۔'),
         ],
       ),
-      // Question words
+      GermanSentence(
+        emoji: '🚫',
+        grammarNote: 'KEINE: Ich habe keine Zeit = میرے پاس وقت نہیں — die Zeit → keine Zeit',
+        words: [
+          SentenceWord(de: 'Ich', en: 'I', ur: 'میرے پاس'),
+          SentenceWord(de: 'habe', en: 'have', ur: 'کوئی'),
+          SentenceWord(de: 'keine', en: 'no', ur: 'وقت'),
+          SentenceWord(de: 'Zeit.', en: 'time.', ur: 'نہیں۔'),
+        ],
+      ),
+      // ===== W-FRAGEN =====
       GermanSentence(
         emoji: '❓',
-        grammarNote: '"Wer bist du?" = Who are you? = تم کون ہو؟',
+        grammarNote: '⭐ WER = who = کون — Wer bist du? کون ہو تم؟',
         words: [
           SentenceWord(de: 'Wer', en: 'Who', ur: 'تم'),
           SentenceWord(de: 'bist', en: 'are', ur: 'کون'),
@@ -3770,17 +3996,16 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '❓',
-        grammarNote: '"Was machst du?" = What are you doing? = تم کیا کر رہے ہو؟',
+        grammarNote: 'WAS = what = کیا — Was machst du? تم کیا کر رہے ہو؟',
         words: [
           SentenceWord(de: 'Was', en: 'What', ur: 'تم'),
-          SentenceWord(de: 'machst', en: 'are doing', ur: 'کیا کر'),
-          SentenceWord(de: 'du', en: 'you', ur: 'رہے'),
-          SentenceWord(de: 'gerade?', en: 'right now?', ur: 'ہو ابھی؟'),
+          SentenceWord(de: 'machst', en: 'are doing', ur: 'کیا'),
+          SentenceWord(de: 'du?', en: 'you?', ur: 'کر رہے ہو؟'),
         ],
       ),
       GermanSentence(
         emoji: '📍',
-        grammarNote: '"Wo wohnst du?" = Where do you live? = تم کہاں رہتے ہو؟',
+        grammarNote: 'WO = where = کہاں — Wo wohnst du? تم کہاں رہتے ہو؟',
         words: [
           SentenceWord(de: 'Wo', en: 'Where', ur: 'تم'),
           SentenceWord(de: 'wohnst', en: 'do live', ur: 'کہاں'),
@@ -3788,8 +4013,26 @@ const List<A1Topic> a1Topics = [
         ],
       ),
       GermanSentence(
+        emoji: '🌍',
+        grammarNote: 'WOHER = where from = کہاں سے — Woher kommst du? تم کہاں سے آئے ہو؟',
+        words: [
+          SentenceWord(de: 'Woher', en: 'Where from', ur: 'تم'),
+          SentenceWord(de: 'kommst', en: 'do come', ur: 'کہاں سے'),
+          SentenceWord(de: 'du?', en: 'you?', ur: 'آئے ہو؟'),
+        ],
+      ),
+      GermanSentence(
+        emoji: '➡️',
+        grammarNote: 'WOHIN = where to = کہاں کی طرف — Wohin gehst du? تم کہاں جا رہے ہو؟',
+        words: [
+          SentenceWord(de: 'Wohin', en: 'Where to', ur: 'تم'),
+          SentenceWord(de: 'gehst', en: 'are going', ur: 'کہاں'),
+          SentenceWord(de: 'du?', en: 'you?', ur: 'جا رہے ہو؟'),
+        ],
+      ),
+      GermanSentence(
         emoji: '⏰',
-        grammarNote: '"Wann kommst du?" = When are you coming? = تم کب آ رہے ہو؟',
+        grammarNote: 'WANN = when = کب — Wann kommst du? تم کب آ رہے ہو؟',
         words: [
           SentenceWord(de: 'Wann', en: 'When', ur: 'تم'),
           SentenceWord(de: 'kommst', en: 'are coming', ur: 'کب'),
@@ -3798,7 +4041,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '🤔',
-        grammarNote: '"Warum lernst du Deutsch?" = Why are you learning German?',
+        grammarNote: 'WARUM = why = کیوں — Warum lernst du Deutsch?',
         words: [
           SentenceWord(de: 'Warum', en: 'Why', ur: 'تم'),
           SentenceWord(de: 'lernst', en: 'are learning', ur: 'کیوں'),
@@ -3808,7 +4051,7 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '🤔',
-        grammarNote: '"Wie geht es dir?" = How are you? = تم کیسے ہو؟',
+        grammarNote: 'WIE = how = کیسے — Wie geht es dir? تم کیسے ہو؟',
         words: [
           SentenceWord(de: 'Wie', en: 'How', ur: 'تم'),
           SentenceWord(de: 'geht', en: 'goes', ur: 'کیسے'),
@@ -3818,148 +4061,28 @@ const List<A1Topic> a1Topics = [
       ),
       GermanSentence(
         emoji: '💰',
-        grammarNote: '"Wie viel kostet das?" = How much does that cost? = یہ کتنے کا ہے؟',
+        grammarNote: 'WIE VIEL = how much = کتنا — Wie viel kostet das?',
         words: [
           SentenceWord(de: 'Wie', en: 'How', ur: 'یہ'),
           SentenceWord(de: 'viel', en: 'much', ur: 'کتنے'),
-          SentenceWord(de: 'kostet', en: 'does cost', ur: 'کا'),
+          SentenceWord(de: 'kostet', en: 'costs', ur: 'کا'),
           SentenceWord(de: 'das?', en: 'that?', ur: 'ہے؟'),
         ],
       ),
       GermanSentence(
-        emoji: '🌍',
-        grammarNote: '"Woher kommst du?" = Where do you come from? = تم کہاں سے آئے ہو؟',
+        emoji: '🔢',
+        grammarNote: 'WIE VIELE = how many = کتنے — Wie viele Kinder haben Sie?',
         words: [
-          SentenceWord(de: 'Woher', en: 'Where from', ur: 'تم'),
-          SentenceWord(de: 'kommst', en: 'do come', ur: 'کہاں سے'),
-          SentenceWord(de: 'du?', en: 'you?', ur: 'آئے ہو؟'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '➡️',
-        grammarNote: '"Wohin gehst du?" = Where are you going? = تم کہاں جا رہے ہو؟',
-        words: [
-          SentenceWord(de: 'Wohin', en: 'Where to', ur: 'تم'),
-          SentenceWord(de: 'gehst', en: 'are going', ur: 'کہاں'),
-          SentenceWord(de: 'du?', en: 'you?', ur: 'جا رہے ہو؟'),
-        ],
-      ),
-      // Modal verbs
-      GermanSentence(
-        emoji: '❤️',
-        grammarNote: '"möchte" = would like = چاہتا ہوں — polite want',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'möchte', en: 'would like', ur: 'چاہتا ہوں'),
-          SentenceWord(de: 'Deutsch', en: 'German', ur: 'جرمن'),
-          SentenceWord(de: 'lernen.', en: 'learn.', ur: 'سیکھنا۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '⚠️',
-        grammarNote: '"muss" = must = لازمی ہے — müssen modal verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
-          SentenceWord(de: 'muss', en: 'must', ur: 'لازمی'),
-          SentenceWord(de: 'jetzt', en: 'now', ur: 'ابھی'),
-          SentenceWord(de: 'gehen.', en: 'go.', ur: 'جانا ہے۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '💪',
-        grammarNote: '"kann" = can = کر سکتا ہوں — können modal verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'kann', en: 'can', ur: 'کر سکتا ہوں'),
-          SentenceWord(de: 'Deutsch', en: 'German', ur: 'جرمن'),
-          SentenceWord(de: 'sprechen.', en: 'speak.', ur: 'بولنا۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '✅',
-        grammarNote: '"darf" = may/allowed = اجازت ہے — dürfen modal verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
-          SentenceWord(de: 'darf', en: 'am allowed', ur: 'اجازت ہے'),
-          SentenceWord(de: 'hier', en: 'here', ur: 'یہاں'),
-          SentenceWord(de: 'parken.', en: 'park.', ur: 'پارک کرنے کی۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '📋',
-        grammarNote: '"soll" = should = چاہیے — sollen modal verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
-          SentenceWord(de: 'soll', en: 'should', ur: 'چاہیے'),
-          SentenceWord(de: 'mehr', en: 'more', ur: 'زیادہ'),
-          SentenceWord(de: 'lernen.', en: 'study.', ur: 'پڑھنا۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '❤️',
-        grammarNote: '"will" = want to = چاہتا ہوں — wollen strong want',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'will', en: 'want to', ur: 'چاہتا ہوں'),
-          SentenceWord(de: 'nach', en: 'to', ur: ''),
-          SentenceWord(de: 'Deutschland', en: 'Germany', ur: 'جرمنی'),
-          SentenceWord(de: 'fahren.', en: 'travel.', ur: 'جانا۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '🧠',
-        grammarNote: '"verstehe" = understand = سمجھتا ہوں — verstehen verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'verstehe', en: 'understand', ur: 'سمجھتا ہوں'),
-          SentenceWord(de: 'kein', en: 'no', ur: 'کوئی'),
-          SentenceWord(de: 'Deutsch.', en: 'German.', ur: 'جرمن نہیں۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '💡',
-        grammarNote: '"weiß" = know = جانتا ہوں — wissen irregular verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'مجھے'),
-          SentenceWord(de: 'weiß', en: 'know', ur: 'نہیں'),
-          SentenceWord(de: 'es', en: 'it', ur: 'پتہ'),
-          SentenceWord(de: 'nicht.', en: 'not.', ur: '۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '👁️',
-        grammarNote: '"sehe" = see = دیکھتا ہوں — sehen irregular verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'sehe', en: 'see', ur: 'دیکھتا ہوں'),
-          SentenceWord(de: 'dich', en: 'you', ur: 'تمہیں'),
-          SentenceWord(de: 'nicht.', en: 'not.', ur: 'نہیں۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '👂',
-        grammarNote: '"höre" = hear = سنتا ہوں — hören regular verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'höre', en: 'hear', ur: 'سنتا ہوں'),
-          SentenceWord(de: 'dich', en: 'you', ur: 'تمہیں'),
-          SentenceWord(de: 'nicht.', en: 'not.', ur: 'نہیں۔'),
-        ],
-      ),
-      GermanSentence(
-        emoji: '🗣️',
-        grammarNote: '"spreche" = speak = بولتا ہوں — sprechen irregular verb',
-        words: [
-          SentenceWord(de: 'Ich', en: 'I', ur: 'میں'),
-          SentenceWord(de: 'spreche', en: 'speak', ur: 'بولتا ہوں'),
-          SentenceWord(de: 'ein', en: 'a', ur: 'تھوڑی'),
-          SentenceWord(de: 'bisschen', en: 'little', ur: 'سی'),
-          SentenceWord(de: 'Deutsch.', en: 'German.', ur: 'جرمن۔'),
+          SentenceWord(de: 'Wie', en: 'How', ur: 'آپ کے'),
+          SentenceWord(de: 'viele', en: 'many', ur: 'کتنے'),
+          SentenceWord(de: 'Kinder', en: 'children', ur: 'بچے'),
+          SentenceWord(de: 'haben', en: 'do have', ur: 'ہیں؟'),
+          SentenceWord(de: 'Sie?', en: 'you?', ur: ''),
         ],
       ),
       GermanSentence(
         emoji: '❓',
-        grammarNote: '"Welcher Bus fährt?" = Which bus goes? = کون سی بس جاتی ہے؟',
+        grammarNote: 'WELCHER/WELCHE/WELCHES = which — Welcher Bus fährt zum Bahnhof?',
         words: [
           SentenceWord(de: 'Welcher', en: 'Which', ur: 'کون سی'),
           SentenceWord(de: 'Bus', en: 'bus', ur: 'بس'),
