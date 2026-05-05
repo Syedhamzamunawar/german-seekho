@@ -3,13 +3,26 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:german_seekho/data/a1_content.dart';
+import 'package:provider/provider.dart';
+import 'progress_provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(statusBarColor: Colors.transparent),
   );
-  runApp(MyApp());
+  
+  final progressProvider = ProgressProvider();
+  await progressProvider.loadProgress();
+  
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => progressProvider),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -946,59 +959,142 @@ class A1TopicsScreen extends StatelessWidget {
         title: Text('A1 — Topics', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         iconTheme: IconThemeData(color: Colors.white),
       ),
-      body: ListView.builder(
-        padding: EdgeInsets.all(16),
-        itemCount: a1Topics.length,
-        itemBuilder: (context, index) {
-          final topic = a1Topics[index];
-          return GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => TopicDetailScreen(topic: topic),
-              ),
-            ),
-            child: Container(
-              margin: EdgeInsets.only(bottom: 12),
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Color(0xFF1B4332),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Color(0xFFD4AF37), width: 1),
-              ),
-              child: Row(
-                children: [
-                  Text(topic.emoji, style: TextStyle(fontSize: 36)),
-                  SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(topic.title,
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
-                        Text(topic.urduTitle,
-                            style: TextStyle(color: Color(0xFFD4AF37), fontSize: 13)),
-                        Text('${topic.words.length} words  •  ${topic.sentences.length} sentences',
-                            style: TextStyle(color: Colors.white38, fontSize: 11)),
-                      ],
+      body: Consumer<ProgressProvider>(
+        builder: (context, progress, child) {
+          return ListView.builder(
+            padding: EdgeInsets.all(16),
+            itemCount: a1Topics.length,
+            itemBuilder: (context, index) {
+              final topic = a1Topics[index];
+              final isUnlocked = progress.isTopicUnlocked(index);
+              final isCompleted = progress.isTopicCompleted(index);
+              final score = progress.getTopicScore(index);
+
+              return GestureDetector(
+                onTap: isUnlocked ? () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => TopicDetailScreen(
+                      topic: topic,
+                      topicIndex: index,
                     ),
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Color(0xFFD4AF37), size: 16),
-                ],
-              ),
-            ),
+                ) : () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('🔒 Pehle topic ${index} ka test pass karo!'),
+                      backgroundColor: Colors.red,
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 12),
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: isUnlocked ? Color(0xFF1B4332) : Color(0xFF0D1F17),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: isCompleted
+                          ? Colors.green
+                          : isUnlocked
+                              ? Color(0xFFD4AF37)
+                              : Colors.grey.shade800,
+                      width: 1.5,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      // Icon
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: isCompleted
+                              ? Colors.green.withOpacity(0.2)
+                              : isUnlocked
+                                  ? Color(0xFFD4AF37).withOpacity(0.2)
+                                  : Colors.grey.withOpacity(0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Text(
+                            isCompleted ? '✅' : isUnlocked ? topic.emoji : '🔒',
+                            style: TextStyle(fontSize: 24),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(width: 16),
+
+                      // Info
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              topic.title,
+                              style: TextStyle(
+                                color: isUnlocked ? Colors.white : Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              topic.urduTitle,
+                              style: TextStyle(
+                                color: isUnlocked ? Color(0xFFD4AF37) : Colors.grey.shade700,
+                                fontSize: 13,
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              '${topic.words.length} words  •  ${topic.sentences.length} sentences',
+                              style: TextStyle(
+                                color: isUnlocked ? Colors.white38 : Colors.grey.shade800,
+                                fontSize: 11,
+                              ),
+                            ),
+                            if (isCompleted)
+                              Text(
+                                '⭐ Score: $score/10',
+                                style: TextStyle(color: Colors.green, fontSize: 12),
+                              ),
+                          ],
+                        ),
+                      ),
+
+                      // Arrow or Lock
+                      Icon(
+                        isCompleted
+                            ? Icons.check_circle
+                            : isUnlocked
+                                ? Icons.arrow_forward_ios
+                                : Icons.lock,
+                        color: isCompleted
+                            ? Colors.green
+                            : isUnlocked
+                                ? Color(0xFFD4AF37)
+                                : Colors.grey.shade700,
+                        size: 18,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           );
         },
       ),
     );
   }
 }
-
 // ===================== TOPIC DETAIL SCREEN =====================
 class TopicDetailScreen extends StatefulWidget {
   final A1Topic topic;
-  const TopicDetailScreen({required this.topic});
-
+  final int topicIndex;
+  const TopicDetailScreen({required this.topic, required this.topicIndex});
+  
   @override
   State<TopicDetailScreen> createState() => _TopicDetailScreenState();
 }
