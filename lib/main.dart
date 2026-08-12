@@ -948,6 +948,484 @@ class _LessonDetailScreenState extends State<LessonDetailScreen> {
     );
   }
 }
+// ===================== QUIZ SCREEN =====================
+class QuizScreen extends StatefulWidget {
+  final A1Topic topic;
+  final int topicIndex;
+
+  const QuizScreen({required this.topic, required this.topicIndex});
+
+  @override
+  State<QuizScreen> createState() => _QuizScreenState();
+}
+
+class _QuizScreenState extends State<QuizScreen> {
+  int currentQuestion = 0;
+  int score = 0;
+  bool answered = false;
+  int? selectedIndex;
+  late List<Map<String, dynamic>> questions;
+
+  @override
+  void initState() {
+    super.initState();
+    questions = _generateQuestions();
+  }
+
+  List<Map<String, dynamic>> _generateQuestions() {
+    final words = widget.topic.words;
+    final sentences = widget.topic.sentences;
+    final List<Map<String, dynamic>> qs = [];
+
+    // ===== WORD QUESTIONS (20) =====
+    // Type 1: German → Urdu
+    final shuffledWords1 = List.of(words)..shuffle();
+    for (final word in shuffledWords1.take(10)) {
+      final others = words.where((w) => w.german != word.german).toList()..shuffle();
+      final wrong = others.take(2).map((w) => w.urdu).toList();
+      final options = [word.urdu, ...wrong]..shuffle();
+      qs.add({
+        'type': 'word_de_ur',
+        'question': word.german,
+        'label': '🇩🇪 German — اردو میں کیا مطلب ہے؟',
+        'correct': word.urdu,
+        'options': options,
+      });
+    }
+
+    // Type 2: Urdu → German
+    final shuffledWords2 = List.of(words)..shuffle();
+    for (final word in shuffledWords2.take(10)) {
+      final others = words.where((w) => w.german != word.german).toList()..shuffle();
+      final wrong = others.take(2).map((w) => w.german).toList();
+      final options = [word.german, ...wrong]..shuffle();
+      qs.add({
+        'type': 'word_ur_de',
+        'question': word.urdu,
+        'label': '🇵🇰 Urdu — German mein kya hoga؟',
+        'correct': word.german,
+        'options': options,
+      });
+    }
+
+    // ===== SENTENCE QUESTIONS (30) =====
+    final allSentenceWords = sentences.expand((s) => s.words).toList();
+    final shuffledSentences = List.of(sentences)..shuffle();
+
+    for (final sentence in shuffledSentences.take(30)) {
+      if (sentence.words.length < 3) continue;
+
+      // Important word blank karo — verb ya noun prefer karo
+      final wordsCopy = List.of(sentence.words)..shuffle();
+      final blankWord = wordsCopy.first;
+
+      // Sentence mein blank
+      final blankSentence = sentence.germanFull.replaceFirst(blankWord.de, '______');
+
+      // Wrong options — similar words from all sentences
+      final wrongPool = allSentenceWords
+          .where((w) => w.de != blankWord.de && w.de.trim().isNotEmpty && w.de.length > 1)
+          .toList()
+        ..shuffle();
+      final wrongOptions = wrongPool.take(2).map((w) => w.de).toList();
+
+      final options = [blankWord.de, ...wrongOptions]..shuffle();
+
+      // Urdu hint — sirf urdu mein
+      final urduHint = sentence.urduFull;
+
+      qs.add({
+        'type': 'sentence_blank',
+        'question': blankSentence,
+        'label': 'خالی جگہ بھرو:',
+        'correct': blankWord.de,
+        'options': options,
+        });
+    }
+
+    qs.shuffle();
+
+    // Ensure exactly 50 questions
+    if (qs.length > 50) return qs.take(50).toList();
+    
+    // Agar kam hain to word questions repeat karo
+    
+    return qs;
+  }
+
+  void _selectAnswer(int index, String answer) {
+    if (answered) return;
+    setState(() {
+      selectedIndex = index;
+      answered = true;
+      if (answer == questions[currentQuestion]['correct']) {
+        score++;
+      }
+    });
+  }
+
+  void _nextQuestion() {
+    if (currentQuestion < questions.length - 1) {
+      setState(() {
+        currentQuestion++;
+        answered = false;
+        selectedIndex = null;
+      });
+    } else {
+      _showResult();
+    }
+  }
+
+  void _showResult() {
+    final total = questions.length;
+    final passed = score >= 45; // 45/50 pass criteria
+
+    if (passed) {
+      Provider.of<ProgressProvider>(context, listen: false)
+          .completeTopicTest(widget.topicIndex, score);
+    }
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => AlertDialog(
+        backgroundColor: Color(0xFF1B4332),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text(
+          passed ? '🎉 Zabardast! Pass!' : '😔 Try Again!',
+          style: TextStyle(
+            color: passed ? Colors.green : Colors.red,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              '$score / $total',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 52,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8),
+            Text(
+              passed
+                  ? '🔓 Agla topic unlock ho gaya!'
+                  : '45/50 chahiye pass hone ke liye!\nAbhi score: $score/50',
+              style: TextStyle(color: Colors.white70, fontSize: 13),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 12),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: score / total,
+                backgroundColor: Colors.white24,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  passed ? Colors.green : Colors.red,
+                ),
+                minHeight: 10,
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              '${((score / total) * 100).round()}%',
+              style: TextStyle(
+                color: passed ? Colors.green : Colors.red,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          if (!passed)
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                setState(() {
+                  currentQuestion = 0;
+                  score = 0;
+                  answered = false;
+                  selectedIndex = null;
+                  questions = _generateQuestions();
+                });
+              },
+              child: Text('Dobara Koshish 🔄',
+                  style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
+            ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pop(context);
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: passed ? Colors.green : Color(0xFFD4AF37),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+            child: Text(
+              passed ? 'Wapas Jao ✅' : 'Baad Mein Try Karo',
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (questions.isEmpty) {
+      return Scaffold(
+        backgroundColor: Color(0xFF0D1F17),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF1B4332),
+          iconTheme: IconThemeData(color: Colors.white),
+          title: Text('Quiz', style: TextStyle(color: Colors.white)),
+        ),
+        body: Center(
+          child: Text('Content kam hai quiz ke liye!',
+              style: TextStyle(color: Colors.white)),
+        ),
+      );
+    }
+
+    final q = questions[currentQuestion];
+    final options = q['options'] as List<dynamic>;
+    final isSentence = q['type'] == 'sentence_blank';
+
+    return Scaffold(
+      backgroundColor: Color(0xFF0D1F17),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF1B4332),
+        title: Text(
+          'Quiz — ${widget.topic.title}',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 16),
+            child: Center(
+              child: Text(
+                '${currentQuestion + 1}/${questions.length}',
+                style: TextStyle(
+                    color: Color(0xFFD4AF37),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Progress Bar
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: (currentQuestion + 1) / questions.length,
+                backgroundColor: Colors.white12,
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFD4AF37)),
+                minHeight: 10,
+              ),
+            ),
+
+            SizedBox(height: 12),
+
+            // Score + Type badge
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Color(0xFFD4AF37), size: 18),
+                    SizedBox(width: 4),
+                    Text('$score درست',
+                        style: TextStyle(
+                            color: Color(0xFFD4AF37),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15)),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: isSentence
+                        ? Colors.blue.withOpacity(0.2)
+                        : Colors.purple.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: isSentence ? Colors.blue : Colors.purple,
+                        width: 1),
+                  ),
+                  child: Text(
+                    isSentence ? '📝 Sentence' : '📖 Word',
+                    style: TextStyle(
+                        color: isSentence ? Colors.blue : Colors.purple,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 20),
+
+            // Question Label
+            Text(
+              q['label'],
+              style: TextStyle(color: Colors.white54, fontSize: 13),
+            ),
+
+            SizedBox(height: 8),
+
+            // Question Box
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+              decoration: BoxDecoration(
+                color: Color(0xFF1B4332),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Color(0xFFD4AF37).withOpacity(0.6), width: 1.5),
+              ),
+              child: Text(
+                q['question'],
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: isSentence ? 17 : 28,
+                  fontWeight: FontWeight.bold,
+                  height: 1.6,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+            // Urdu Hint — sirf sentence ke liye
+           SizedBox(height: 20),
+
+            // Options
+            Expanded(
+              child: ListView(
+                children: options.asMap().entries.map((entry) {
+                  final i = entry.key;
+                  final option = entry.value.toString();
+                  final isCorrect = option == q['correct'];
+                  final isSelected = selectedIndex == i;
+
+                  Color bgColor = Color(0xFF1B4332);
+                  Color borderColor = Colors.white24;
+                  Color textColor = Colors.white;
+                  Widget? trailingWidget;
+
+                  if (answered) {
+                    if (isCorrect) {
+                      bgColor = Colors.green.withOpacity(0.2);
+                      borderColor = Colors.green;
+                      textColor = Colors.green;
+                      trailingWidget = Icon(Icons.check_circle, color: Colors.green, size: 22);
+                    } else if (isSelected) {
+                      bgColor = Colors.red.withOpacity(0.2);
+                      borderColor = Colors.red;
+                      textColor = Colors.red;
+                      trailingWidget = Icon(Icons.cancel, color: Colors.red, size: 22);
+                    }
+                  }
+
+                  return GestureDetector(
+                    onTap: () => _selectAnswer(i, option),
+                    child: Container(
+                      width: double.infinity,
+                      margin: EdgeInsets.only(bottom: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      decoration: BoxDecoration(
+                        color: bgColor,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: borderColor, width: 1.5),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: answered && isCorrect
+                                  ? Colors.green.withOpacity(0.3)
+                                  : answered && isSelected
+                                      ? Colors.red.withOpacity(0.3)
+                                      : Color(0xFFD4AF37).withOpacity(0.15),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Text(
+                                ['A', 'B', 'C'][i],
+                                style: TextStyle(
+                                  color: textColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 14),
+                          Expanded(
+                            child: Text(
+                              option,
+                              style: TextStyle(
+                                color: textColor,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          if (trailingWidget != null) trailingWidget,
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+
+            // Next Button
+            if (answered)
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: _nextQuestion,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFD4AF37),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Text(
+                    currentQuestion < questions.length - 1
+                        ? 'Agla Sawal ➡️'
+                        : 'Natija Dekho 🏆',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 // ===================== A1 TOPICS SCREEN =====================
 class A1TopicsScreen extends StatelessWidget {
   @override
@@ -1094,7 +1572,7 @@ class TopicDetailScreen extends StatefulWidget {
   final A1Topic topic;
   final int topicIndex;
   const TopicDetailScreen({required this.topic, required this.topicIndex});
-  
+
   @override
   State<TopicDetailScreen> createState() => _TopicDetailScreenState();
 }
@@ -1217,6 +1695,21 @@ void _checkAnswer(String correctText) {
         title: Text('${widget.topic.emoji} ${widget.topic.title}',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         iconTheme: IconThemeData(color: Colors.white),
+        actions: [
+  IconButton(
+    icon: Icon(Icons.quiz, color: Colors.white),
+    tooltip: 'Quiz',
+    onPressed: () => Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(
+          topic: widget.topic,
+          topicIndex: widget.topicIndex,
+        ),
+      ),
+    ),
+  ),
+],
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: Color(0xFFD4AF37),
